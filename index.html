@@ -22,21 +22,55 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      font-size: 16px;
     }
 
     h1 {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 1.5em;
+      margin: 0 0 .5em;
     }
 
     #loading {
-      margin: 1em;
+      position: absolute;
+      background-color: #ccccff;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      padding: 1em;
+      text-align: center;
+    }
+
+    #play-button {
+      font-size: 2em;
+      cursor: pointer;
+      padding: 0.1em .75em;
+      border-radius: .5em;
+      font-weight: bold;
+      color: #6a1784;
+      background-color: #e7b8ff;
+      border-color: #cb65ff;
+    }
+
+    #play-button:disabled {
+      cursor: default;
+      color: #666;
+      background-color: #ccc;
+      border-color: #999;
     }
   </style>
 </head>
 <body>
   <div id="loading">
+    <p><img src="assets/logo.png" width="382" height="331" alt="Phaser logo"></p>
+
     <h1>2018 November game</h1>
     <p>Game fully developed in just one month, from beginning to end.</p>
+
+    <p><button id="play-button" disabled="disabled">Play</button></p>
+    <p id="loading-animation">Game loading, please wait...</span>
   </div>
 
   <noscript>To play this game you need to enable Javascript.</noscript>
