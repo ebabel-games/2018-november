@@ -1,6 +1,8 @@
 import 'phaser';
 
+import * as C from './constants';
 import resizeGame from './modules/resize-game';
+import debounce from './modules/debounce';
 
 window.addEventListener('load', () => {
   var config = {
@@ -30,7 +32,7 @@ window.addEventListener('load', () => {
 
   // Handle resizing the whole game while preserving aspect ratio.
   resizeGame(game);
-  window.addEventListener('resize', (e) => {
+  window.addEventListener('resize', debounce((e) => {
     resizeGame(game);
-  });
+  }, C.debounceDelay));
 });
