@@ -1,5 +1,7 @@
 import 'phaser';
 
+import resizeGame from './modules/resize-game';
+
 window.addEventListener('load', () => {
   var config = {
     type: Phaser.AUTO,
@@ -23,24 +25,12 @@ window.addEventListener('load', () => {
     const logo = this.add.image(400, 300, 'logo');
   }
 
-  const resizeGame = () => {
-    const canvas = document.querySelector('body > canvas');
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const windowRatio = windowWidth / windowHeight;
-    const gameRatio = game.config.width / game.config.height;
-
-    if (windowRatio < gameRatio) {
-      canvas.style.width = `${windowWidth}px`;
-      canvas.style.height = `${(windowWidth / gameRatio)}px`;
-    } else {
-      canvas.style.width = `${(windowHeight * gameRatio)}px`;
-      canvas.style.height = `${windowHeight}px`;
-    }
-  }
-
+  // Get focus in case the game is in an iframe.
   window.focus();
-  resizeGame();
 
-  window.addEventListener('resize', resizeGame);
+  // Handle resizing the whole game while preserving aspect ratio.
+  resizeGame(game);
+  window.addEventListener('resize', (e) => {
+    resizeGame(game);
+  });
 });
