@@ -7,8 +7,9 @@
  */
 
 import * as C from './constants';
-import resizeGame from './modules/resize-game';
-import debounce from './modules/debounce';
+import resizeGame from './utils/resize-game';
+import debounce from './utils/debounce';
+import PlayGame from './modules/play-game';
 
 // The whole game is enclosed in an anonymous function that runs once all code is loaded.
 window.addEventListener('load', () => {
@@ -19,27 +20,11 @@ window.addEventListener('load', () => {
     width: 800,
     height: 600,
     backgroundColor: 0xccccff,
-    scene: {
-      preload,
-      create,
-    }
+    scene: PlayGame,
   };
 
   // Phaser main game object.
   const game = new Phaser.Game(config);
-
-  // Phaser function to preload all assets.
-  function preload() {
-    this.load.image('logo', 'assets/logo.png');
-  }
-
-  // Phaser function to instantiate all game elements.
-  function create() {
-    this.add.image(400, 300, 'logo');
-
-    // Now the game is ready, so hide the loading screen.
-    document.getElementById('loading').style.display = 'none';
-  }
 
   // Get focus in case the game is in an iframe.
   window.focus();
