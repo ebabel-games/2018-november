@@ -1,4 +1,10 @@
-import 'phaser';
+'use strict';
+
+/**
+ * @author       Thomas Amar <hello@ebabel.eu>
+ * @copyright    2018 eBabel Games
+ * @license      {@link https://github.com/ebabel-games/2018-november/blob/master/LICENSE|GPL-3.0 License}
+ */
 
 import * as C from './constants';
 import resizeGame from './modules/resize-game';
@@ -24,7 +30,7 @@ window.addEventListener('load', () => {
   }
 
   function create() {
-    const logo = this.add.image(400, 300, 'logo');
+    this.add.image(400, 300, 'logo');
   }
 
   // Get focus in case the game is in an iframe.
@@ -32,7 +38,7 @@ window.addEventListener('load', () => {
 
   // Handle resizing the whole game while preserving aspect ratio.
   resizeGame(game);
-  window.addEventListener('resize', debounce((e) => {
+  window.addEventListener('resize', debounce(() => {
     resizeGame(game);
   }, C.debounceDelay));
 });
