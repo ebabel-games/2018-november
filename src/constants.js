@@ -35,7 +35,7 @@ module.exports = {
   gravity: 300,
 
   skyKey: 'sky',
-  skyAsset: 'assets/sky.png',
+  skyAsset: 'assets/sky.webp',
   skyPositionX: 400,
   skyPositionY: 300,
 
@@ -54,7 +54,7 @@ module.exports = {
   groundPlatformScale: 2,
 
   platformsKey: 'ground',
-  platformsAsset: 'assets/platform.png',
+  platformsAsset: 'assets/platform.webp',
   platforms: [
     [600, 400],
     [50, 250],
@@ -63,6 +63,8 @@ module.exports = {
 
   playerKey: 'dude',
   playerAsset: 'assets/dude.png',
+  playerFrameWidth: 32,
+  playerFrameHeight: 48,
   playerStartX: 100,
   playerStartY: 450,
   playerGravity: 30,
@@ -114,7 +116,7 @@ module.exports = {
   bombMiddleBorder: 400,
   bombRightEdge: 800,
   bombKey: 'bomb',
-  bombAsset: 'assets/bomb.png',
+  bombAsset: 'assets/bomb.webp',
   bombStartPositionY: 16,
   bombBounce: 1,
   bombCollideWorldBounds: true,

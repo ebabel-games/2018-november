@@ -20,8 +20,8 @@ class BootGame extends Phaser.Scene {
     this.load.spritesheet(C.playerKey,
       C.playerAsset,
       {
-        frameWidth: 32,
-        frameHeight: 48,
+        frameWidth: C.playerFrameWidth,
+        frameHeight: C.playerFrameHeight,
       },
     );
   }
