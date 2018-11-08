@@ -22,4 +22,4 @@ const resizeGame = (game) => {
   }
 };
 
-module.exports = resizeGame;
+export default resizeGame;

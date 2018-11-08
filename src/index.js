@@ -17,11 +17,20 @@ window.addEventListener('load', () => {
   // Phaser configuration.
   const config = {
     type: Phaser.AUTO,
-    parent: 'phaser-example',
     width: 800,
     height: 600,
-    backgroundColor: 0xccccff,
-    scene: [BootGame, PlayGame],
+    backgroundColor: C.colors[0][0],
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 300 },
+        debug: false,
+      },
+    },
+    scene: [
+      BootGame,
+      PlayGame,
+    ],
   };
 
   // Phaser main game object.

@@ -11,7 +11,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #ccccff;
+      background-color: #58BBDC;
       font-family: 'Times New Roman', Times, serif;
     }
 
@@ -25,33 +25,46 @@
       font-size: 16px;
     }
 
-    h1 {
+    h1,
+    #play-button {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    h1 {
       font-size: 1.5em;
+      margin: 0 0 .5em;
+    }
+
+    p {
       margin: 0 0 .5em;
     }
 
     #loading {
       position: absolute;
-      background-color: #ccccff;
       top: 0;
       right: 0;
       left: 0;
       bottom: 0;
       z-index: 1;
-      padding: 1em;
+      padding: 3em;
       text-align: center;
     }
 
     #play-button {
       font-size: 2em;
       cursor: pointer;
+      margin: 1em auto;
       padding: 0.1em .75em;
       border-radius: .5em;
       font-weight: bold;
-      color: #6a1784;
-      background-color: #e7b8ff;
-      border-color: #cb65ff;
+      color: #FF3A16;
+      background-color: #FFD060;
+      border-color: #FF7960;
+    }
+
+    #play-button:hover {
+      color: #FFD060;
+      background-color: #FF3A16;
     }
 
     #play-button:disabled {
@@ -60,11 +73,18 @@
       background-color: #ccc;
       border-color: #999;
     }
+
+    @media (max-width: 768px) {
+      #logo {
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="loading">
-    <p><img src="assets/logo.png" width="382" height="331" alt="Phaser logo"></p>
+    <p><img src="assets/phaser-logo/phaser-logo-small.webp" width="382" height="331" alt="Phaser logo" id="logo"></p>
 
     <h1>2018 November game</h1>
     <p>Game fully developed in just one month, from beginning to end.</p>
@@ -75,7 +95,7 @@
 
   <noscript>To play this game you need to enable Javascript.</noscript>
 
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.min.js"></script>
+  <script src="libs/phaser.min.js" charset="utf-8"></script>
   <script src="build/game.min.js" charset="utf-8"></script>
 </body>
 </html>

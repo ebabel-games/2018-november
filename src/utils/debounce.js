@@ -36,4 +36,4 @@ const debounce = (func, wait, immediate) => {
   return executedFunction;
 };
 
-module.exports = debounce;
+export default debounce;

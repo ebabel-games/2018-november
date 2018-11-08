@@ -11,10 +11,20 @@ class BootGame extends Phaser.Scene {
 
   // Phaser function to preload all assets.
   preload() {
-    this.load.image('logo', 'assets/logo.png'); // todo: remove logo, I don't need it here.
+    this.load.image('sky', 'assets/sky.png');
+    this.load.image('ground', 'assets/platform.png');
+    this.load.image('star', 'assets/star.png');
+    this.load.image('bomb', 'assets/bomb.png');
+    this.load.spritesheet('dude',
+      'assets/dude.png',
+      {
+        frameWidth: 32,
+        frameHeight: 48,
+      },
+    );
   }
 
-  // Phaser function to instantiate all game elements.
+  // Phaser function, here used to activate the play button once the preload has completed its work.
   create() {
     document.getElementById('play-button').addEventListener('click', (e) => {
       e.preventDefault();
@@ -31,4 +41,4 @@ class BootGame extends Phaser.Scene {
   }
 }
 
-module.exports = BootGame;
+export default BootGame;
