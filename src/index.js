@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
     type: Phaser.AUTO,
     width: C.gameWidth,
     height: C.gameHeight,
-    backgroundColor: C.colors[0][0],
+    backgroundColor: C.colors0x[0][0],
     physics: {
       default: 'arcade',
       arcade: {
