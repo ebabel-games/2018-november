@@ -125,4 +125,7 @@ module.exports = {
   bombVelocityMax: 20,
   bombAllowGravity: false,
   bombExplodeScale: 2,
+
+  audioWinKey: 'win',
+  audioWinAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],
 };

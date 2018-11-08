@@ -21,6 +21,7 @@ class PlayGame extends Phaser.Scene {
       gameOver: false,
       gameOverText: null,
       firstPlay: true,
+      audioWin: null,
     };
   }
 
@@ -126,6 +127,10 @@ class PlayGame extends Phaser.Scene {
     );
     this.EG.gameOverText.visible = false;
 
+    // Audio win sound when player collects a star.
+    this.EG.audioWin = this.sound.add(C.audioWinKey);
+
+
     // Setup keyboard handling.
     this.EG.cursors = this.input.keyboard.createCursorKeys();
   }
@@ -183,6 +188,7 @@ class PlayGame extends Phaser.Scene {
 
   // Player collects a star that it overlaps.
   collectStar(player, star) {
+    this.EG.audioWin.play();
     star.disableBody(true, true);
     this.EG.score += C.scoreCollectStar;
     this.EG.scoreText.setText(`Score: ${this.EG.score}`);

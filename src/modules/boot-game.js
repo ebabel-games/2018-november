@@ -13,6 +13,7 @@ class BootGame extends Phaser.Scene {
 
   // Phaser function to preload all assets.
   preload() {
+    // Graphics.
     this.load.image(C.skyKey, C.skyAsset);
     this.load.image(C.platformsKey, C.platformsAsset);
     this.load.image(C.starsKey, C.starsAsset);
@@ -24,6 +25,9 @@ class BootGame extends Phaser.Scene {
         frameHeight: C.playerFrameHeight,
       },
     );
+
+    // Audio.
+    this.load.audio(C.audioWinKey, C.audioWinAssets);
   }
 
   // Phaser function, here used to activate the play button once the preload has completed its work.
