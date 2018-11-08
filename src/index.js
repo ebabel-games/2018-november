@@ -17,14 +17,14 @@ window.addEventListener('load', () => {
   // Phaser configuration.
   const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: C.gameWidth,
+    height: C.gameHeight,
     backgroundColor: C.colors[0][0],
     physics: {
       default: 'arcade',
       arcade: {
-        gravity: { y: 300 },
-        debug: false,
+        gravity: { y: C.gravity },
+        debug: C.debug,
       },
     },
     scene: [

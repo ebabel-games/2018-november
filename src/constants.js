@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = {
+  debug: false,
+
   // The game saves performance by not running code until it stops getting called for at least x milliseconds.
   debounceDelay: 250,
 
@@ -18,4 +20,8 @@ module.exports = {
 
   playerStartX: 100,
   playerStartY: 450,
+
+  gameWidth: 800,
+  gameHeight: 600,
+  gravity: 300,
 };
