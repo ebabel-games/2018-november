@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>2018 Nov</title>
+  <title>2018 Nov game</title>
   <meta name="description" content="Game fully developed in just one month, from beginning to end.">
 
   <style>
     body {
+      height: 100vh;
       margin: 0;
       padding: 0;
       background-color: #58BBDC;
@@ -31,7 +32,7 @@
     }
 
     h1 {
-      font-size: 1.5em;
+      font-size: 2em;
       margin: 0 0 .5em;
     }
 
@@ -40,14 +41,10 @@
     }
 
     #loading {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      z-index: 1;
+      position: relative;
       padding: 3em;
       text-align: center;
+      z-index: 1;
     }
 
     #play-button {
@@ -75,9 +72,25 @@
     }
 
     @media (max-width: 768px) {
+      #loading {
+        padding: 1em;
+      }
+
       #logo {
         width: 100%;
         height: auto;
+      }
+    }
+
+    @media (max-height: 600px) {
+      #loading {
+        padding: 1em;
+      }
+
+      #logo {
+        float: left;
+        width: auto;
+        height: 100%;
       }
     }
   </style>
@@ -86,8 +99,8 @@
   <div id="loading">
     <p><img src="assets/phaser-logo/phaser-logo-small.webp" width="382" height="331" alt="Phaser logo" id="logo"></p>
 
-    <h1>2018 November game</h1>
-    <p>Game fully developed in just one month, from beginning to end.</p>
+    <h1>2018 Nov game</h1>
+    <p>Platform game developed in just 1 month.</p>
 
     <p><button id="play-button" disabled="disabled">Play</button></p>
     <p id="loading-animation">Game loading, please wait...</span>
