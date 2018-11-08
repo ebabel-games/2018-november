@@ -1,5 +1,7 @@
 'use strict';
 
+import * as C from '../constants';
+
 /**
  * `BootGame`
  * First Phaser scene, to preload all assets.
@@ -11,12 +13,12 @@ class BootGame extends Phaser.Scene {
 
   // Phaser function to preload all assets.
   preload() {
-    this.load.image('sky', 'assets/sky.png');
-    this.load.image('ground', 'assets/platform.png');
-    this.load.image('star', 'assets/star.png');
-    this.load.image('bomb', 'assets/bomb.png');
-    this.load.spritesheet('dude',
-      'assets/dude.png',
+    this.load.image(C.skyKey, C.skyAsset);
+    this.load.image(C.platformsKey, C.platformsAsset);
+    this.load.image(C.starsKey, C.starsAsset);
+    this.load.image(C.bombKey, C.bombAsset);
+    this.load.spritesheet(C.playerKey,
+      C.playerAsset,
       {
         frameWidth: 32,
         frameHeight: 48,
