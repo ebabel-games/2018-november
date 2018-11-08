@@ -128,4 +128,8 @@ module.exports = {
 
   audioWinKey: 'win',
   audioWinAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],
+  audioExplosionKey: 'explosion',
+  audioExplosionAssets: ['assets/kenney-sounds/explosion1.ogg', 'assets/kenney-sounds/explosion1.mp3'],
+  audioGameOverKey: 'gameover',
+  audioGameOverKeyAssets: ['assets/kenney-sounds/gameover3.ogg', 'assets/kenney-sounds/gameover3.mp3'],
 };

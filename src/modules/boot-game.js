@@ -28,6 +28,8 @@ class BootGame extends Phaser.Scene {
 
     // Audio.
     this.load.audio(C.audioWinKey, C.audioWinAssets);
+    this.load.audio(C.audioExplosionKey, C.audioExplosionAssets);
+    this.load.audio(C.audioGameOverKey, C.audioGameOverKeyAssets);
   }
 
   // Phaser function, here used to activate the play button once the preload has completed its work.

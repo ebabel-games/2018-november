@@ -22,6 +22,8 @@ class PlayGame extends Phaser.Scene {
       gameOverText: null,
       firstPlay: true,
       audioWin: null,
+      audioExplosion: null,
+      audioGameOver: null,
     };
   }
 
@@ -130,6 +132,11 @@ class PlayGame extends Phaser.Scene {
     // Audio win sound when player collects a star.
     this.EG.audioWin = this.sound.add(C.audioWinKey);
 
+    // Audio explosion sound when player hits a bomb.
+    this.EG.audioExplosion = this.sound.add(C.audioExplosionKey);
+
+    // Audio when player loses a game.
+    this.EG.audioGameOver = this.sound.add(C.audioGameOverKey);
 
     // Setup keyboard handling.
     this.EG.cursors = this.input.keyboard.createCursorKeys();
@@ -159,6 +166,7 @@ class PlayGame extends Phaser.Scene {
   // Game loop function that gets called continuously unless a game over.
   update() {
     if (this.EG.gameOver) {
+      this.EG.audioGameOver.play();
       // Player has lost a game, suspend it and reset.
       this.EG.gameOverText.visible = true;
       this.scene.pause();
@@ -213,6 +221,7 @@ class PlayGame extends Phaser.Scene {
 
   // Player has hit a bomb.
   hitBomb(player, bomb) {
+    this.EG.audioExplosion.play();
     this.physics.pause();
     player.setTint(C.playerDeadTint);
     player.anims.play(C.playerAnimations.turn.key);
