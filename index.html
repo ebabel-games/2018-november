@@ -72,21 +72,6 @@
       border-color: #999;
     }
 
-    #noscript {
-      font-size: 2em;
-      font-weight: bold;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      text-align: center;
-      background-color: #58BBDC;
-      z-index: 1;
-      padding: 2em 0;
-      color: white;
-    }
-
     @media (max-width: 768px) {
       #loading {
         padding: 1em;
@@ -109,6 +94,31 @@
         height: 100%;
       }
     }
+
+    #noscript {
+      font-size: 2em;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      background-color: #58BBDC;
+      z-index: 1;
+      padding: 2em 0;
+      color: white;
+    }
+
+    #noscript #logo {
+      float: none;
+      width: auto;
+      height: auto;
+    }
+
+    marquee {
+      margin: 0 0 2.5em;
+    }
   </style>
 </head>
 <body>
@@ -124,9 +134,11 @@
 
   <noscript>
     <div id="noscript">
-      <marquee behavior="" direction="">
+      <marquee>
         Enable Javascript to play this game.
       </marquee>
+
+      <p><img src="assets/phaser-logo/phaser-logo-small.webp" width="382" height="331" alt="Phaser logo" id="logo"></p>
     </div>
   </noscript>
 
