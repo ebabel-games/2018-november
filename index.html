@@ -27,7 +27,8 @@
     }
 
     h1,
-    #play-button {
+    #play-button,
+    #noscript {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
@@ -71,6 +72,21 @@
       border-color: #999;
     }
 
+    #noscript {
+      font-size: 2em;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      background-color: #58BBDC;
+      z-index: 1;
+      padding: 2em 0;
+      color: white;
+    }
+
     @media (max-width: 768px) {
       #loading {
         padding: 1em;
@@ -106,7 +122,13 @@
     <p id="loading-animation">Game loading, please wait...</span>
   </div>
 
-  <noscript>To play this game you need to enable Javascript.</noscript>
+  <noscript>
+    <div id="noscript">
+      <marquee behavior="" direction="">
+        Enable Javascript to play this game.
+      </marquee>
+    </div>
+  </noscript>
 
   <script src="libs/phaser.min.js" charset="utf-8"></script>
   <script src="build/game.min.js" charset="utf-8"></script>
