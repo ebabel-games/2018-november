@@ -40,7 +40,7 @@ module.exports = {
   skyPositionY: 300,
 
   starsKey: 'star',
-  starsAsset: 'assets/star.png',
+  starsAsset: 'assets/star-optimised.svg',
   starsRepeat: 11,
   starsPositionX: 14,
   starsPositionY: 60,
