@@ -11,6 +11,7 @@ class PlayGame extends Phaser.Scene {
     super('PlayGame');
 
     this.EG = {
+      ground: null,
       platforms: null,
       player: null,
       cursors: null,
@@ -41,15 +42,17 @@ class PlayGame extends Phaser.Scene {
         stepX: C.starsPositionStepX,
       },
     });
-    this.EG.stars.children.iterate((child) => {
-      child.setBounceY(Phaser.Math.FloatBetween(C.starsMinBounceY, C.starsMaxBounceY));
-    });
+    this.EG.stars.children.iterate((child) => 
+      child.setBounceY(Phaser.Math.FloatBetween(C.starsMinBounceY, C.starsMaxBounceY))
+    );
+
+    // Static ground.
+    this.EG.ground = this.physics.add.staticGroup();
+    this.EG.ground.create(C.groundX, C.groundY, C.groundKey);
+    this.physics.add.collider(this.EG.stars, this.EG.ground);
 
     // Static platforms.
     this.EG.platforms = this.physics.add.staticGroup();
-    this.EG.platforms.create(C.groundPlatformX, C.groundPlatformY, C.platformsKey)
-      .setScale(C.groundPlatformScale)
-      .refreshBody();
     this.EG.platforms.create(C.platforms[0][0], C.platforms[0][1], C.platformsKey);
     this.EG.platforms.create(C.platforms[1][0], C.platforms[1][1], C.platformsKey);
     this.EG.platforms.create(C.platforms[2][0], C.platforms[2][1], C.platformsKey);
@@ -62,6 +65,7 @@ class PlayGame extends Phaser.Scene {
     this.EG.player.body.setGravityY(C.playerGravity);
     this.EG.player.setBounce(C.playerBounce);
     this.EG.player.setCollideWorldBounds(C.playerCollideWorldBounds);
+    this.physics.add.collider(this.EG.player, this.EG.ground);
     this.physics.add.collider(this.EG.player, this.EG.platforms);
 
     // Check if player overlaps a star.
@@ -69,7 +73,9 @@ class PlayGame extends Phaser.Scene {
 
     // Bombs that can kill the player.
     this.EG.bombs = this.physics.add.group();
+    this.physics.add.collider(this.EG.bombs, this.EG.ground);
     this.physics.add.collider(this.EG.bombs, this.EG.platforms);
+    this.physics.add.collider(this.EG.bombs, this.EG.bombs);
     this.physics.add.collider(this.EG.player, this.EG.bombs, this.hitBomb, null, this);
 
     // Setup animations of the player sprite.

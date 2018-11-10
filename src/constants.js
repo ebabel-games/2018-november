@@ -49,16 +49,17 @@ module.exports = {
   starsMaxBounceY: 0.8,
   starsThresholdSpawnBomb: 0,
 
-  groundPlatformX: 400,
-  groundPlatformY: 568,
-  groundPlatformScale: 2,
+  groundKey: 'ground',
+  groundAsset: 'assets/ground.svg',
+  groundX: 400,
+  groundY: 584,
 
-  platformsKey: 'ground',
-  platformsAsset: 'assets/platform.webp',
+  platformsKey: 'platform',
+  platformsAsset: 'assets/platform.svg',
   platforms: [
-    [600, 400],
-    [50, 250],
-    [730, 220],
+    [550, 432],
+    [50, 282],
+    [730, 252],
   ],
 
   playerKey: 'dude',
