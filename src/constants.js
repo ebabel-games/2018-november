@@ -35,12 +35,12 @@ module.exports = {
   gravity: 300,
 
   skyKey: 'sky',
-  skyAsset: 'assets/sky-optimised.svg',
+  skyAsset: 'assets/sky.svg',
   skyPositionX: 400,
   skyPositionY: 300,
 
   starsKey: 'star',
-  starsAsset: 'assets/star-optimised.svg',
+  starsAsset: 'assets/star.svg',
   starsRepeat: 11,
   starsPositionX: 14,
   starsPositionY: 60,
@@ -116,7 +116,7 @@ module.exports = {
   bombMiddleBorder: 400,
   bombRightEdge: 800,
   bombKey: 'bomb',
-  bombAsset: 'assets/bomb-optimised.svg',
+  bombAsset: 'assets/bomb.svg',
   bombStartPositionY: 16,
   bombBounce: 1,
   bombCollideWorldBounds: true,
