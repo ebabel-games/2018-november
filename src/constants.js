@@ -63,7 +63,7 @@ module.exports = {
   ],
 
   playerKey: 'dude',
-  playerAsset: 'assets/dude.png',
+  playerAsset: 'assets/hero.png',
   playerFrameWidth: 32,
   playerFrameHeight: 48,
   playerStartX: 100,
