@@ -225,7 +225,6 @@ class PlayGame extends Phaser.Scene {
     this.physics.pause();
     player.setTint(C.playerDeadTint);
     player.anims.play(C.playerAnimations.turn.key);
-    bomb.setScale(C.bombExplodeScale);
     this.EG.gameOver = true;
   }
 }

@@ -116,7 +116,7 @@ module.exports = {
   bombMiddleBorder: 400,
   bombRightEdge: 800,
   bombKey: 'bomb',
-  bombAsset: 'assets/bomb.webp',
+  bombAsset: 'assets/bomb-optimised.svg',
   bombStartPositionY: 16,
   bombBounce: 1,
   bombCollideWorldBounds: true,
@@ -124,7 +124,6 @@ module.exports = {
   bombVelocityMaxLower: 200,
   bombVelocityMax: 20,
   bombAllowGravity: false,
-  bombExplodeScale: 2,
 
   audioWinKey: 'win',
   audioWinAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],

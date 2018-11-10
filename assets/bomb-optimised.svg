@@ -1,0 +1,37 @@
+<svg width="5.8208mm" height="9.3183mm" version="1.1" viewBox="0 0 5.8208 9.3183" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <radialGradient id="radialGradient2680" cx="88.267" cy="62.482" r="33.338" gradientTransform="matrix(.21977 .69556 -.5131 .16212 99.974 -21.116)" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient6665"/>
+  <linearGradient id="linearGradient6665">
+   <stop stop-color="#808080" offset="0"/>
+   <stop stop-color="#1a1a1a" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient2682" x1="91.065" x2="102.5" y1="38.514" y2="38.467" gradientUnits="userSpaceOnUse" xlink:href="#linearGradient6665"/>
+  <filter id="filter7645" x="-.55277" y="-.45822" width="2.1055" height="1.9164" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="1.4285721"/>
+  </filter>
+  <filter id="filter7649" x="-1.1326" y="-.86108" width="3.2652" height="2.7222" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="1.3872622"/>
+  </filter>
+  <linearGradient id="linearGradient2684" x1="104.91" x2="105.32" y1="32.417" y2="14.409" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#ff3a16" offset="0"/>
+   <stop stop-color="#ffdc88" offset="1"/>
+  </linearGradient>
+  <filter id="filter2555" x="-.3972" y="-.3972" width="1.7944" height="1.7944" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="2.1364591"/>
+  </filter>
+ </defs>
+ <g transform="translate(-195.18 -51.756)">
+  <g transform="matrix(.088 0 0 .088 188.87 52.354)">
+   <g>
+    <circle cx="104.78" cy="66.019" r="33.073" fill="url(#radialGradient2680)"/>
+    <path d="m93.133 32.681c7.6201-4.3464 16.086-4.3121 23.066 0l0.2176 6.35c-8.1635 3.8236-15.833 3.5167-23.066 0z" fill="url(#linearGradient2682)"/>
+    <ellipse transform="matrix(.44224 .8969 -.69861 .71551 -4.8204 10.17)" cx="96.119" cy="-70.242" rx="2.4081" ry="3.8987" fill="#999" filter="url(#filter7645)"/>
+    <ellipse transform="rotate(29.501 -21.724 -4.0691)" cx="97.534" cy="-4.5207" rx="1.1906" ry="2.1167" fill="#999" filter="url(#filter7649)"/>
+    <ellipse cx="104.67" cy="32.569" rx="11.533" ry="3.1286" fill="#333"/>
+   </g>
+   <path d="m104.91 32.417s-6.1575-4.904-4.7625-10.583c1.7267-7.0296 10.993-3.535 10.583-10.716" fill="none" stroke="url(#linearGradient2684)" stroke-linecap="round" stroke-width="1.8521"/>
+   <path d="m119.19 23.074-7.7878-11.565-15.369 3.1537 11.14-5.8318-10.34-11.3 13.363 7.3654 4.5867-11.694-1.0619 12.66 10.493-1.3696-9.2737 5.5572z" fill="#ffbb16" stroke-width=".26458"/>
+   <circle cx="111.82" cy="9.287" r="6.4546" fill="#ffbb16" filter="url(#filter2555)" stroke-width=".26458"/>
+  </g>
+ </g>
+</svg>
