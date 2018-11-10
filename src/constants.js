@@ -35,7 +35,7 @@ module.exports = {
   gravity: 300,
 
   skyKey: 'sky',
-  skyAsset: 'assets/sky.webp',
+  skyAsset: 'assets/sky-optimised.svg',
   skyPositionX: 400,
   skyPositionY: 300,
 
