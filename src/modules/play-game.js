@@ -229,7 +229,8 @@ class PlayGame extends Phaser.Scene {
   }
 
   // Player has hit a bomb.
-  hitBomb(player, bomb) {
+  // Note: second parameter is 'bomb' but I don't need it.
+  hitBomb(player) {
     this.EG.audioExplosion.play();
     this.physics.pause();
     player.setTint(C.playerDeadTint);
