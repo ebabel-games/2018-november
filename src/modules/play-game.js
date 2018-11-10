@@ -192,6 +192,9 @@ class PlayGame extends Phaser.Scene {
     if (this.EG.cursors.up.isDown && this.EG.player.body.touching.down) {
       this.EG.player.setVelocityY(C.playerDownVelocityY);
     }
+
+    // Spinning bombs.
+    this.EG.bombs.children.entries.map(bomb => bomb.rotation += 0.1);
   }
 
   // Player collects a star that it overlaps.
