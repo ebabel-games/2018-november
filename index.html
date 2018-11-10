@@ -90,7 +90,6 @@
       }
 
       #logo {
-        float: left;
         width: auto;
         height: 100%;
       }
@@ -112,7 +111,6 @@
     }
 
     #noscript #logo {
-      float: none;
       width: auto;
       height: auto;
     }
@@ -124,6 +122,10 @@
 </head>
 <body>
   <div id="loading">
+    <h1>2018 Nov game</h1>
+
+    <p><button id="play-button" disabled="disabled">Play</button></p>
+  
     <p>
       <picture>
         <source srcset="assets/phaser-logo/phaser-logo-small.webp" type="image/webp">
@@ -132,9 +134,6 @@
       </picture>
     </p>
 
-    <h1>2018 Nov game</h1>
-
-    <p><button id="play-button" disabled="disabled">Play</button></p>
     <p id="loading-animation">Game loading, please wait...</span>
   </div>
 
