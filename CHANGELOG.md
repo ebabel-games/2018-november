@@ -1,7 +1,14 @@
 # 2018 November game
 
+## 1.2.0
+Epxlore beyond the initial visual game screen, like Super Mario who sees more than first screen.
+See [Zenva course](https://academy.zenva.com/lesson/arcade-basics/) for more info.
+
 ## 1.1.0
 Touch enabled for mobile devices.
+Code based on Phaser 3 release documentation for [handling touch events](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/touchevents/).
 
 ## 1.0.0
 First version of the game, launch for desktop browsers with keyboard input (arrow keys left, right, and up).
+Project started from a [boilerplate](https://github.com/photonstorm/phaser3-project-template)
+See [tutorial walkthrough](http://phaser.io/tutorials/making-your-first-phaser-3-game) for more info.
