@@ -10,5 +10,5 @@ Code based on Phaser 3 release documentation for [handling touch events](https:/
 
 ## 1.0.0
 First version of the game, launch for desktop browsers with keyboard input (arrow keys left, right, and up).
-Project started from a [boilerplate](https://github.com/photonstorm/phaser3-project-template)
-See [tutorial walkthrough](http://phaser.io/tutorials/making-your-first-phaser-3-game) for more info.
+Project started from a [boilerplate](https://github.com/photonstorm/phaser3-project-template).
+See [tutorial walkthrough](http://phaser.io/tutorials/making-your-first-phaser-3-game) and [Phaser 3 book](https://phaser.io/news/2018/07/brand-new-phaser-3-book) for more info.
