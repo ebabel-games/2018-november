@@ -58,8 +58,8 @@ module.exports = {
   platformsAsset: 'assets/platform.svg',
   platforms: [
     [550, 432],
-    [50, 282],
-    [730, 252],
+    [70, 282],
+    [720, 252],
   ],
 
   playerKey: 'dude',

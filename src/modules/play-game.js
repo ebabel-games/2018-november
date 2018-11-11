@@ -153,7 +153,11 @@ class PlayGame extends Phaser.Scene {
       this.EG.cursors.left.isDown = (this.EG.player.x > pointer.x);
       this.EG.cursors.up.isDown = (this.EG.player.y - C.playerFrameHeight > pointer.y);
     });
-    this.input.on('pointerup', () => this.EG.cursors.up.isDown = false);
+    this.input.on('pointerup', () => {
+      this.EG.cursors.right.isDown = false;
+      this.EG.cursors.left.isDown = false;
+      this.EG.cursors.up.isDown = false;
+    });
   }
 
   // When the player has lost and the game is paused,
