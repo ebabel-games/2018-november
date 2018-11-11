@@ -146,6 +146,14 @@ class PlayGame extends Phaser.Scene {
 
     // Setup keyboard handling.
     this.EG.cursors = this.input.keyboard.createCursorKeys();
+
+    // Mouse/touch handling.
+    this.input.on('pointerdown', (pointer) => {
+      this.EG.cursors.right.isDown = (this.EG.player.x < pointer.x);
+      this.EG.cursors.left.isDown = (this.EG.player.x > pointer.x);
+      this.EG.cursors.up.isDown = (this.EG.player.y - C.playerFrameHeight > pointer.y);
+    });
+    this.input.on('pointerup', () => this.EG.cursors.up.isDown = false);
   }
 
   // When the player has lost and the game is paused,
