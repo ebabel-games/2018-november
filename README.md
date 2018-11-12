@@ -3,7 +3,7 @@
 
 Game fully developed in just one month, from beginning to end.
 
-![Screenshot of gameplay](assets/screenshots/2018-11-12-1011.png)
+![Screenshot of gameplay](assets/screenshots/2018-11-12-2325.png)
 
 ### Requirements
 We need [Node.js](https://nodejs.org) to install and run scripts.

@@ -13,8 +13,10 @@ const colors0x = [
   [0xFF7960, 0xFFC4B9, 0xFF9A88, 0xFF5B3D, 0xFF3A16],  // Secondary color (2).
 ];
 
+const debug = (localStorage['debug'] === 'true') ? true : false;
+
 module.exports = {
-  debug: (localStorage['debug'] === 'true') ? true : false,
+  debug,
 
   scoreDefault: 0,
   scoreCollectStar: 10,
@@ -191,7 +193,7 @@ module.exports = {
   playerTurnVelocityX: 0,
   playerUpVelocityY: -330,
   playerDeadTint: colors0x[1][0],
-  playerMaxY: 544,
+  playerMaxY: 1144,
 
   playerAnimations: {
     left: {
@@ -227,6 +229,14 @@ module.exports = {
   gameOverTextStroke: colors[2][0],
   gameOverTextStrokeThickness: 12,
 
+  winTextPositionX: 155,
+  winTextPositionY: 200,
+  winTextDefault: 'You won!',
+  winTextFontSize: '120px',
+  winTextFill: colors[1][3],
+  winTextStroke: colors[2][0],
+  winTextStrokeThickness: 12,
+
   bombLeftEdge: 0,
   bombMiddleBorder: 400,
   bombRightEdge: 800,
@@ -240,6 +250,7 @@ module.exports = {
   bombVelocityMax: 20,
   bombAllowGravity: false,
   bombIsCircle: true,
+  bombSpawnInterval: (debug) ? 150000 : 15000,
 
   audioWinKey: 'win',
   audioWinAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],

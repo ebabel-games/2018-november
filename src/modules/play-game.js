@@ -20,10 +20,13 @@ class PlayGame extends Phaser.Scene {
       bombs: null,
       gameOver: false,
       gameOverText: null,
+      win: false,
+      winText: null,
       firstPlay: true,
       audioWin: null,
       audioExplosion: null,
       audioGameOver: null,
+      bombSpawnIntervalId: null,
     };
   }
 
@@ -136,6 +139,22 @@ class PlayGame extends Phaser.Scene {
     this.EG.gameOverText.setScrollFactor(0);
     this.EG.gameOverText.visible = false;
 
+    // Level won text to display when player wins.
+    this.EG.winText = this.add.text(
+      C.winTextPositionX,
+      C.winTextPositionY,
+      C.winTextDefault,
+      {
+        fontFamily: C.headerFontFamily,
+        fontSize: C.winTextFontSize,
+        fill: C.winTextFill,
+        stroke: C.winTextStroke,
+        strokeThickness: C.winTextStrokeThickness,
+      }
+    );
+    this.EG.winText.setScrollFactor(0);
+    this.EG.winText.visible = false;
+
     // Audio win sound when player collects a star.
     this.EG.audioWin = this.sound.add(C.audioWinKey);
 
@@ -170,6 +189,25 @@ class PlayGame extends Phaser.Scene {
     // Set the camera to follow the player.
     this.cameras.main.setBounds(0, 0, C.worldBoundsWidth, C.worldBoundsHeight);
     this.cameras.main.startFollow(this.EG.player);
+
+    // At regular intervals, spawn a bomb.
+    this.EG.bombSpawnIntervalId = setInterval(() => {
+      this.spawnBomb();
+    }, C.bombSpawnInterval);
+
+    // Initially, spawn 1 bomb.
+    this.spawnBomb();
+  }
+
+  spawnBomb() {
+    const x = (this.EG.player.x < C.bombMiddleBorder) ?
+      Phaser.Math.Between(C.bombMiddleBorder, C.bombRightEdge)
+      : Phaser.Math.Between(C.bombLeftEdge, C.bombMiddleBorder);
+    const bomb = this.EG.bombs.create(x, C.bombStartPositionY, C.bombKey);
+    bomb.setBounce(C.bombBounce);
+    bomb.setCollideWorldBounds(C.bombCollideWorldBounds);
+    bomb.setVelocity(Phaser.Math.Between(C.bombVelocityMinLower, C.bombVelocityMaxLower), C.bombVelocityMax);
+    bomb.allowGravity = C.bombAllowGravity;
   }
 
   // When the player has lost and the game is paused,
@@ -200,15 +238,28 @@ class PlayGame extends Phaser.Scene {
 
   // Game loop function that gets called continuously unless a game over.
   update() {
+    if (this.EG.gameOver || this.EG.win) clearInterval(this.EG.bombSpawnIntervalId);
+
     if (this.EG.gameOver) {
-      this.EG.audioGameOver.play();
       // Player has lost a game, suspend it and reset.
+      this.EG.audioGameOver.play();
       this.EG.gameOverText.visible = true;
       this.scene.pause();
       setTimeout(() => {
         this.resetGame();
         this.resetKeyboard();
         this.scene.restart();
+      }, C.minimumDelay);
+      return;
+    }
+
+    if (this.EG.win) {
+      // Player has won and will move on to the next level.
+      this.EG.winText.visible = true;
+      this.scene.pause();
+      setTimeout(() => {
+        this.resetKeyboard();
+        this.scene.start('LevelTwo');
       }, C.minimumDelay);
       return;
     }
@@ -242,21 +293,10 @@ class PlayGame extends Phaser.Scene {
     this.EG.score += C.scoreCollectStar;
     this.EG.scoreText.setText(`Score: ${this.EG.score}`);
 
-    // When all stars have been collected, add a new bomb and respawn all stars.
+    // When all stars have been collected, player has won and can move to the next level.
     if (this.EG.stars.countActive(true) === C.starsThresholdSpawnBomb) {
-      this.EG.stars.children.iterate((child) => {
-        child.enableBody(true, child.x, 0, true, true);
-      });
-
-      // Spawn the new bomb either in the right or left part of the scene, where the player isn't.
-      const x = (player.x < C.bombMiddleBorder) ?
-        Phaser.Math.Between(C.bombMiddleBorder, C.bombRightEdge)
-        : Phaser.Math.Between(C.bombLeftEdge, C.bombMiddleBorder);
-      const bomb = this.EG.bombs.create(x, C.bombStartPositionY, C.bombKey);
-      bomb.setBounce(C.bombBounce);
-      bomb.setCollideWorldBounds(C.bombCollideWorldBounds);
-      bomb.setVelocity(Phaser.Math.Between(C.bombVelocityMinLower, C.bombVelocityMaxLower), C.bombVelocityMax);
-      bomb.allowGravity = C.bombAllowGravity;
+      this.physics.pause();
+      this.EG.win = true;
     }
   }
 
