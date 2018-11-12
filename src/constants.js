@@ -53,6 +53,47 @@ module.exports = {
   starsMinBounceY: 0.2,
   starsMaxBounceY: 0.4,
   starsThresholdSpawnBomb: 0,
+  stars: [
+    // Ground.
+    [154, 1157],
+    [294, 1157],
+
+    // Lowest block.
+    [504, 1008],
+    [574, 1008],
+    [644, 1008],
+    [14,  913],
+    [84,  913],
+    [364, 855],
+    [434, 855],
+    [714, 825],
+    [784, 825],
+    [224, 813],
+
+    // Middle block.
+    [504, 708],
+    [574, 708],
+    [644, 708],
+    [14,  613],
+    [84,  613],
+    [364, 555],
+    [434, 555],
+    [714, 525],
+    [784, 525],
+    [224, 513],
+
+    // Upper block.
+    [504, 408],
+    [574, 408],
+    [644, 408],
+    [14,  313],
+    [84,  313],
+    [364, 255],
+    [434, 255],
+    [714, 225],
+    [784, 225],
+    [224, 213],
+  ],
 
   platformKey: 'platform',
   platformAsset: 'assets/platform.svg',
@@ -141,7 +182,7 @@ module.exports = {
   playerFrameWidth: 32,
   playerFrameHeight: 48,
   playerStartX: 120,
-  playerStartY: 1000,
+  playerStartY: 50,
   playerGravity: 30,
   playerBounce: 0.2,
   playerCollideWorldBounds: true,

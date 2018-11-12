@@ -31,19 +31,15 @@ class PlayGame extends Phaser.Scene {
     // Static element: the Sky.
     this.add.image(C.skyPositionX, C.skyPositionY, C.skyKey).setScrollFactor(0);
 
-    // Bouncing stars to collect.
-    this.EG.stars = this.physics.add.group({
-      key: C.starsKey,
-      repeat: C.starsRepeat,
-      setXY: {
-        x: C.starsPositionX,
-        y: C.starsPositionY,
-        stepX: C.starsPositionStepX,
-      },
-    });
-    this.EG.stars.children.iterate((child) => 
-      child.setBounceY(Phaser.Math.FloatBetween(C.starsMinBounceY, C.starsMaxBounceY))
-    );
+    // Stars to collect.
+    this.EG.stars = this.physics.add.staticGroup();
+    C.stars.map((data) => {
+      this.EG.stars.create(
+        data[0],
+        data[1],
+        C.starsKey,
+      );
+    });    
 
     // Group of static platforms.
     this.EG.platforms = this.physics.add.staticGroup();
