@@ -15,11 +15,18 @@ class BootGame extends Phaser.Scene {
   preload() {
     // Graphics.
     this.load.image(C.skyKey, C.skyAsset);
-    this.load.image(C.groundKey, C.groundAsset);
-    this.load.image(C.platformsKey, C.platformsAsset);
+    this.load.spritesheet(
+      C.platformKey,
+      C.platformAsset,
+      {
+        frameWidth: C.platformFrameWidth,
+        frameHeight: C.platformFrameHeight,
+      },
+    );
     this.load.image(C.starsKey, C.starsAsset);
     this.load.image(C.bombKey, C.bombAsset);
-    this.load.spritesheet(C.playerKey,
+    this.load.spritesheet(
+      C.playerKey,
       C.playerAsset,
       {
         frameWidth: C.playerFrameWidth,

@@ -1,12 +1,17 @@
-<svg width="105.83mm" height="8.4667mm" version="1.1" viewBox="0 0 105.83 8.4667" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="96" height="32" version="1.1" viewBox="0 0 25.4 8.4667" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <linearGradient id="a" x1="105.43" x2="105.43" y1="144.17" y2="152.66" gradientUnits="userSpaceOnUse">
+  <linearGradient id="a">
    <stop stop-color="#ff5b3d" offset="0"/>
    <stop stop-color="#ffc63d" offset=".5"/>
    <stop stop-color="#36a6cb" offset="1"/>
   </linearGradient>
+  <linearGradient id="d" x1="105.43" x2="105.43" y1="144.17" y2="152.66" gradientTransform="matrix(3.7795 0 0 3.7795 -196.85 -545.26)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="c" x1="105.43" x2="105.43" y1="144.17" y2="152.66" gradientTransform="matrix(-1 0 0 1 129.57 -2.5213e-6)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="b" x1="105.43" x2="105.43" y1="144.17" y2="152.66" gradientTransform="translate(8.4667)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
  </defs>
  <g transform="translate(-52.083 -144.27)">
-  <rect x="52.083" y="144.27" width="105.83" height="8.4667" ry="2.1167" fill="url(#a)"/>
+  <path transform="matrix(.26458 0 0 .26458 52.083 144.27)" d="m8 0c-4.432 0-8 3.568-8 8v16c0 4.432 3.568 8 8 8h24v-32z" fill="url(#d)"/>
+  <path d="m75.367 144.27c1.1726 0 2.1167 0.94403 2.1167 2.1167v4.2333c0 1.1726-0.94403 2.1167-2.1167 2.1167h-6.35v-8.4667z" fill="url(#c)"/>
+  <rect x="60.55" y="144.27" width="8.4667" height="8.4667" fill="url(#b)"/>
  </g>
 </svg>

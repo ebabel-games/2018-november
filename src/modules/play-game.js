@@ -47,15 +47,40 @@ class PlayGame extends Phaser.Scene {
     );
 
     // Static ground.
-    this.EG.ground = this.physics.add.staticGroup();
-    this.EG.ground.create(C.groundX, C.groundY, C.groundKey);
+    this.EG.ground = this.add.tileSprite(C.groundX, C.groundY, C.groundWidth, C.groundHeight, C.platformKey, C.platformsFrameKeyMiddle);
+    this.physics.add.existing(this.EG.ground, C.groundIsStatic);
     this.physics.add.collider(this.EG.stars, this.EG.ground);
 
     // Static platforms.
     this.EG.platforms = this.physics.add.staticGroup();
-    this.EG.platforms.create(C.platforms[0][0], C.platforms[0][1], C.platformsKey);
-    this.EG.platforms.create(C.platforms[1][0], C.platforms[1][1], C.platformsKey);
-    this.EG.platforms.create(C.platforms[2][0], C.platforms[2][1], C.platformsKey);
+    C.platforms.map((data) => {
+      this.EG.platforms.add(this.add.tileSprite(  // Left end of the platform.
+        data.left[C.platformsX],
+        data.left[C.platformsY],
+        data.left[C.platformsWidth],
+        data.left[C.platformsHeight],
+        C.platformKey,
+        C.platformsFrameKeyLeft,
+      ));
+
+      this.EG.platforms.add(this.add.tileSprite(  // Middle of the platform.
+        data.middle[C.platformsX],
+        data.middle[C.platformsY],
+        data.middle[C.platformsWidth],
+        data.middle[C.platformsHeight],
+        C.platformKey,
+        C.platformsFrameKeyMiddle,
+      ));
+
+      this.EG.platforms.add(this.add.tileSprite(  // Right end of the platform.
+        data.right[C.platformsX],
+        data.right[C.platformsY],
+        data.right[C.platformsWidth],
+        data.right[C.platformsHeight],
+        C.platformKey,
+        C.platformsFrameKeyRight,
+      ));
+    });
     this.physics.add.collider(this.EG.stars, this.EG.platforms);
 
     // Setup main player sprite.
@@ -179,6 +204,9 @@ class PlayGame extends Phaser.Scene {
     this.EG.score = C.scoreDefault;
     this.EG.gameOver = false;
     this.EG.firstPlay = false;
+
+    // Make sure the player has not been pushed by a bomb below the ground.
+    if (this.EG.player.y > C.playerMaxY) this.EG.player.y = C.playerMaxY;
   }
 
   // Game loop function that gets called continuously unless a game over.

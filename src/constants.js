@@ -14,7 +14,7 @@ const colors0x = [
 ];
 
 module.exports = {
-  debug: false,
+  debug: (localStorage['debug'] === 'true') ? true : false,
 
   scoreDefault: 0,
   scoreCollectStar: 10,
@@ -49,20 +49,54 @@ module.exports = {
   starsMaxBounceY: 0.8,
   starsThresholdSpawnBomb: 0,
 
-  groundKey: 'ground',
-  groundAsset: 'assets/ground.svg',
   groundX: 400,
   groundY: 584,
+  groundWidth: 32 * 25,
+  groundHeight: 32,
+  groundIsStatic: true,
 
-  platformsKey: 'platform',
-  platformsAsset: 'assets/platform.svg',
+  platformKey: 'platform',
+  platformAsset: 'assets/platform.svg',
+  platformFrameWidth: 32,
+  platformFrameHeight: 32,
+  platformIsStatic: true,
+  // platformsX, platformsY, platformsWidth, and platformsHeight.
+  platformsX: 0,
+  platformsY: 1,
+  platformsWidth: 2,
+  platformsHeight: 3,
   platforms: [
-    [550, 432],
-    [70, 282],
-    [720, 252],
+    {
+      left: [590 - (32 * 7 / 2) - (32 / 2), 435, 32, 32],
+      middle: [590, 435, 32 * 7, 32],
+      right: [590 + (32 * 7 / 2) + (32 / 2), 435, 32, 32],
+    },
+    {
+      left: [400 - (32 * 3 / 2) - (32 / 2), 282, 32, 32],
+      middle: [400, 282, 32 * 3, 32],
+      right: [400 + (32 * 3 / 2) + (32 / 2), 282, 32, 32],
+    },
+    {
+      left: [736 - (32 * 2 / 2) - (32 / 2), 252, 32, 32],
+      middle: [736, 252, 32 * 2, 32],
+      right: [736 + (32 * 2 / 2) + (32 / 2), 252, 32, 32],
+    },
+    {
+      left: [16, 340, 32, 32],
+      middle: [48, 340, 32, 32],
+      right: [80, 340, 32, 32],
+    },
+    {
+      left: [188, 240, 32, 32],
+      middle: [220, 240, 32, 32],
+      right: [252, 240, 32, 32],
+    },
   ],
+  platformsFrameKeyLeft: 0,
+  platformsFrameKeyMiddle: 1,
+  platformsFrameKeyRight: 2,
 
-  playerKey: 'dude',
+  playerKey: 'hero',
   playerAsset: 'assets/hero.png',
   playerFrameWidth: 32,
   playerFrameHeight: 48,
@@ -76,6 +110,7 @@ module.exports = {
   playerTurnVelocityX: 0,
   playerDownVelocityY: -330,
   playerDeadTint: colors0x[1][0],
+  playerMaxY: 544,
 
   playerAnimations: {
     left: {
@@ -125,6 +160,7 @@ module.exports = {
   bombVelocityMaxLower: 200,
   bombVelocityMax: 20,
   bombAllowGravity: false,
+  bombIsCircle: true,
 
   audioWinKey: 'win',
   audioWinAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],

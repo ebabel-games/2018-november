@@ -3,7 +3,7 @@
 
 Game fully developed in just one month, from beginning to end.
 
-![Screenshot of gameplay](assets/screenshots/2018-11-11-2111.png)
+![Screenshot of gameplay](assets/screenshots/2018-11-12-1011.png)
 
 ### Requirements
 We need [Node.js](https://nodejs.org) to install and run scripts.
@@ -26,3 +26,9 @@ Browse to http://localhost:8080 to play the game.
 - Put your touch device on the same network as your development machine (same Wifi for eample).
 - Add the port :8080 to the IP.
 - You should now be able to test the game running on your machine with your touch device.
+
+## Switch the debug mode on or off
+By default, debug mode is off. To switch it on, run in Javascript console of your browser:
+```
+localStorage['debug'] = true;
+```
