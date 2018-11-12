@@ -123,7 +123,7 @@ module.exports = {
     },
     right: {
       key: 'right',
-      frames: [5, 6, 7, 8],
+      frames: [0, 1, 2, 3],
       frameRate: 10,
       repeat: -1,
     },

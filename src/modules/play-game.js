@@ -227,9 +227,11 @@ class PlayGame extends Phaser.Scene {
     }
 
     if (this.EG.cursors.left.isDown) {
+      this.EG.player.flipX = false;
       this.EG.player.setVelocityX(C.playerLeftVelocityX);
       this.EG.player.anims.play(C.playerAnimations.left.key, true);
     } else if (this.EG.cursors.right.isDown) {
+      this.EG.player.flipX = true;
       this.EG.player.setVelocityX(C.playerRightVelocityX);
       this.EG.player.anims.play(C.playerAnimations.right.key, true);
     } else {
