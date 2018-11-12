@@ -74,7 +74,7 @@ module.exports = {
   playerLeftVelocityX: -160,
   playerRightVelocityX: 160,
   playerTurnVelocityX: 0,
-  playerDownVelocityY: -330,
+  playerUpVelocityY: -330,
   playerDeadTint: colors0x[1][0],
 
   playerAnimations: {
