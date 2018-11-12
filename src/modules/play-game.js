@@ -23,9 +23,10 @@ class PlayGame extends Phaser.Scene {
       win: false,
       winText: null,
       firstPlay: true,
-      audioWin: null,
+      audioCollectStar: null,
       audioExplosion: null,
       audioGameOver: null,
+      audioWin: null,
       bombSpawnIntervalId: null,
     };
   }
@@ -155,14 +156,17 @@ class PlayGame extends Phaser.Scene {
     this.EG.winText.setScrollFactor(0);
     this.EG.winText.visible = false;
 
-    // Audio win sound when player collects a star.
-    this.EG.audioWin = this.sound.add(C.audioWinKey);
+    // Audio collect star sound when player collects a star.
+    this.EG.audioCollectStar = this.sound.add(C.audioCollectStarKey);
 
     // Audio explosion sound when player hits a bomb.
     this.EG.audioExplosion = this.sound.add(C.audioExplosionKey);
 
-    // Audio when player loses a game.
+    // Audio when player loses the game.
     this.EG.audioGameOver = this.sound.add(C.audioGameOverKey);
+
+    // Audio when player wins the game.
+    this.EG.audioWin = this.sound.add(C.audioWinKey);
 
     // Setup keyboard handling.
     this.EG.cursors = this.input.keyboard.createCursorKeys();
@@ -230,6 +234,7 @@ class PlayGame extends Phaser.Scene {
   resetGame() {
     this.EG.score = C.scoreDefault;
     this.EG.gameOver = false;
+    this.EG.win = false;
     this.EG.firstPlay = false;
 
     // Make sure the player has not been pushed by a bomb below the ground.
@@ -238,28 +243,25 @@ class PlayGame extends Phaser.Scene {
 
   // Game loop function that gets called continuously unless a game over.
   update() {
-    if (this.EG.gameOver || this.EG.win) clearInterval(this.EG.bombSpawnIntervalId);
-
     if (this.EG.gameOver) {
       // Player has lost a game, suspend it and reset.
       this.EG.audioGameOver.play();
       this.EG.gameOverText.visible = true;
+    }
+
+    if (this.EG.win) {
+      // Player has won and will move on to the next level.
+      this.EG.audioWin.play();
+      this.EG.winText.visible = true;
+    }
+
+    if (this.EG.gameOver || this.EG.win) {
+      clearInterval(this.EG.bombSpawnIntervalId);
       this.scene.pause();
       setTimeout(() => {
         this.resetGame();
         this.resetKeyboard();
         this.scene.restart();
-      }, C.minimumDelay);
-      return;
-    }
-
-    if (this.EG.win) {
-      // Player has won and will move on to the next level.
-      this.EG.winText.visible = true;
-      this.scene.pause();
-      setTimeout(() => {
-        this.resetKeyboard();
-        this.scene.start('LevelTwo');
       }, C.minimumDelay);
       return;
     }
@@ -288,7 +290,7 @@ class PlayGame extends Phaser.Scene {
 
   // Player collects a star that it overlaps.
   collectStar(player, star) {
-    this.EG.audioWin.play();
+    this.EG.audioCollectStar.play();
     star.disableBody(true, true);
     this.EG.score += C.scoreCollectStar;
     this.EG.scoreText.setText(`Score: ${this.EG.score}`);

@@ -252,10 +252,12 @@ module.exports = {
   bombIsCircle: true,
   bombSpawnInterval: (debug) ? 150000 : 15000,
 
-  audioWinKey: 'win',
-  audioWinAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],
+  audioCollectStarKey: 'collect-star',
+  audioCollectStarAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],
   audioExplosionKey: 'explosion',
   audioExplosionAssets: ['assets/kenney-sounds/explosion1.ogg', 'assets/kenney-sounds/explosion1.mp3'],
   audioGameOverKey: 'gameover',
-  audioGameOverKeyAssets: ['assets/kenney-sounds/gameover3.ogg', 'assets/kenney-sounds/gameover3.mp3'],
+  audioGameOverAssets: ['assets/kenney-sounds/gameover3.ogg', 'assets/kenney-sounds/gameover3.mp3'],
+  audioWinKey: 'win',
+  audioWinAssets: ['assets/kenney-sounds/jingles_NES03.ogg', 'assets/kenney-sounds/jingles_NES03.mp3'],
 };
