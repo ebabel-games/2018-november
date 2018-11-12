@@ -28,12 +28,8 @@ class PlayGame extends Phaser.Scene {
   }
 
   create() {
-    // Set the world bounds.
-    this.physics.world.bounds.width = C.worldBoundsWidth;
-    this.physics.world.bounds.height = C.worldBoundsHeight;
-
     // Static element: the Sky.
-    this.add.image(C.skyPositionX, C.skyPositionY, C.skyKey);
+    this.add.image(C.skyPositionX, C.skyPositionY, C.skyKey).setScrollFactor(0);
 
     // Bouncing stars to collect.
     this.EG.stars = this.physics.add.group({
@@ -126,6 +122,7 @@ class PlayGame extends Phaser.Scene {
         fill: C.scoreTextFill,
       },
     );
+    this.EG.scoreText.setScrollFactor(0);
 
     // Game Over text to display when player loses.
     this.EG.gameOverText = this.add.text(
@@ -140,6 +137,7 @@ class PlayGame extends Phaser.Scene {
         strokeThickness: C.gameOverTextStrokeThickness,
       }
     );
+    this.EG.gameOverText.setScrollFactor(0);
     this.EG.gameOverText.visible = false;
 
     // Audio win sound when player collects a star.
@@ -168,6 +166,14 @@ class PlayGame extends Phaser.Scene {
       // In debug mode, output the coordinates of the pointer in the console.
       if (C.debug) console.log(`x: ${pointer.x}, y: ${pointer.y}`); /* eslint no-console: 0 */
     });
+
+    // Set the world bounds.
+    this.physics.world.bounds.width = C.worldBoundsWidth;
+    this.physics.world.bounds.height = C.worldBoundsHeight;
+
+    // Set the camera to follow the player.
+    this.cameras.main.setBounds(0, 0, C.worldBoundsWidth, C.worldBoundsHeight);
+    this.cameras.main.startFollow(this.EG.player);
   }
 
   // When the player has lost and the game is paused,
