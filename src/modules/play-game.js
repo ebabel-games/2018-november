@@ -234,7 +234,7 @@ class PlayGame extends Phaser.Scene {
     }
 
     if (this.EG.cursors.up.isDown && this.EG.player.body.touching.down) {
-      this.EG.player.setVelocityY(C.playerDownVelocityY);
+      this.EG.player.setVelocityY(C.playerUpVelocityY);
     }
 
     // Spinning bombs.
