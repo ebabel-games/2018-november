@@ -11,7 +11,6 @@ class PlayGame extends Phaser.Scene {
     super('PlayGame');
 
     this.EG = {
-      ground: null,
       platforms: null,
       player: null,
       cursors: null,
@@ -46,40 +45,41 @@ class PlayGame extends Phaser.Scene {
       child.setBounceY(Phaser.Math.FloatBetween(C.starsMinBounceY, C.starsMaxBounceY))
     );
 
-    // Static ground.
-    this.EG.ground = this.add.tileSprite(C.groundX, C.groundY, C.groundWidth, C.groundHeight, C.platformKey, C.platformsFrameKeyMiddle);
-    this.physics.add.existing(this.EG.ground, C.groundIsStatic);
-    this.physics.add.collider(this.EG.stars, this.EG.ground);
-
-    // Static platforms.
+    // Group of static platforms.
     this.EG.platforms = this.physics.add.staticGroup();
     C.platforms.map((data) => {
-      this.EG.platforms.add(this.add.tileSprite(  // Left end of the platform.
-        data.left[C.platformsX],
-        data.left[C.platformsY],
-        data.left[C.platformsWidth],
-        data.left[C.platformsHeight],
-        C.platformKey,
-        C.platformsFrameKeyLeft,
-      ));
+      if (data.left) {
+        this.EG.platforms.add(this.add.tileSprite(  // Left end of the platform.
+          data.left[C.platformsX],
+          data.left[C.platformsY],
+          data.left[C.platformsWidth],
+          data.left[C.platformsHeight],
+          C.platformKey,
+          C.platformsFrameKeyLeft,
+        ));
+      }
 
-      this.EG.platforms.add(this.add.tileSprite(  // Middle of the platform.
-        data.middle[C.platformsX],
-        data.middle[C.platformsY],
-        data.middle[C.platformsWidth],
-        data.middle[C.platformsHeight],
-        C.platformKey,
-        C.platformsFrameKeyMiddle,
-      ));
+      if (data.middle) {
+        this.EG.platforms.add(this.add.tileSprite(  // Middle of the platform.
+          data.middle[C.platformsX],
+          data.middle[C.platformsY],
+          data.middle[C.platformsWidth],
+          data.middle[C.platformsHeight],
+          C.platformKey,
+          C.platformsFrameKeyMiddle,
+        ));
+      }
 
-      this.EG.platforms.add(this.add.tileSprite(  // Right end of the platform.
-        data.right[C.platformsX],
-        data.right[C.platformsY],
-        data.right[C.platformsWidth],
-        data.right[C.platformsHeight],
-        C.platformKey,
-        C.platformsFrameKeyRight,
-      ));
+      if (data.right) {
+        this.EG.platforms.add(this.add.tileSprite(  // Right end of the platform.
+          data.right[C.platformsX],
+          data.right[C.platformsY],
+          data.right[C.platformsWidth],
+          data.right[C.platformsHeight],
+          C.platformKey,
+          C.platformsFrameKeyRight,
+        ));
+      }
     });
     this.physics.add.collider(this.EG.stars, this.EG.platforms);
 
@@ -90,7 +90,6 @@ class PlayGame extends Phaser.Scene {
     this.EG.player.body.setGravityY(C.playerGravity);
     this.EG.player.setBounce(C.playerBounce);
     this.EG.player.setCollideWorldBounds(C.playerCollideWorldBounds);
-    this.physics.add.collider(this.EG.player, this.EG.ground);
     this.physics.add.collider(this.EG.player, this.EG.platforms);
 
     // Check if player overlaps a star.
@@ -98,7 +97,6 @@ class PlayGame extends Phaser.Scene {
 
     // Bombs that can kill the player.
     this.EG.bombs = this.physics.add.group();
-    this.physics.add.collider(this.EG.bombs, this.EG.ground);
     this.physics.add.collider(this.EG.bombs, this.EG.platforms);
     this.physics.add.collider(this.EG.bombs, this.EG.bombs);
     this.physics.add.collider(this.EG.player, this.EG.bombs, this.hitBomb, null, this);

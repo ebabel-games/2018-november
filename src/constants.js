@@ -49,12 +49,6 @@ module.exports = {
   starsMaxBounceY: 0.8,
   starsThresholdSpawnBomb: 0,
 
-  groundX: 400,
-  groundY: 584,
-  groundWidth: 32 * 25,
-  groundHeight: 32,
-  groundIsStatic: true,
-
   platformKey: 'platform',
   platformAsset: 'assets/platform.svg',
   platformFrameWidth: 32,
@@ -66,6 +60,9 @@ module.exports = {
   platformsWidth: 2,
   platformsHeight: 3,
   platforms: [
+    {
+      middle: [400, 584, 32 * 25, 32],
+    },
     {
       left: [590 - (32 * 7 / 2) - (32 / 2), 435, 32, 32],
       middle: [590, 435, 32 * 7, 32],
