@@ -160,10 +160,13 @@ class PlayGame extends Phaser.Scene {
       this.EG.cursors.left.isDown = (this.EG.player.x > pointer.x);
       this.EG.cursors.up.isDown = (this.EG.player.y - C.playerFrameHeight > pointer.y);
     });
-    this.input.on('pointerup', () => {
+    this.input.on('pointerup', (pointer) => {
       this.EG.cursors.right.isDown = false;
       this.EG.cursors.left.isDown = false;
       this.EG.cursors.up.isDown = false;
+
+      // In debug mode, output the coordinates of the pointer in the console.
+      if (C.debug) console.log(`x: ${pointer.x}, y: ${pointer.y}`); /* eslint no-console: 0 */
     });
   }
 
