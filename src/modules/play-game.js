@@ -28,6 +28,10 @@ class PlayGame extends Phaser.Scene {
   }
 
   create() {
+    // Set the world bounds.
+    this.physics.world.bounds.width = C.worldBoundsWidth;
+    this.physics.world.bounds.height = C.worldBoundsHeight;
+
     // Static element: the Sky.
     this.add.image(C.skyPositionX, C.skyPositionY, C.skyKey);
 
@@ -170,10 +174,12 @@ class PlayGame extends Phaser.Scene {
     this.EG.cursors.left.enabled = false;
     this.EG.cursors.right.enabled = false;
     this.EG.cursors.up.enabled = false;
+    this.EG.cursors.space.enabled = false;
     this.EG.cursors.down.enabled = false;
     this.EG.cursors.left.reset();
     this.EG.cursors.right.reset();
     this.EG.cursors.up.reset();
+    this.EG.cursors.space.reset();
     this.EG.cursors.down.reset();
   }
 
@@ -215,7 +221,8 @@ class PlayGame extends Phaser.Scene {
       this.EG.player.anims.play(C.playerAnimations.turn.key);
     }
 
-    if (this.EG.cursors.up.isDown && this.EG.player.body.touching.down) {
+    if ((this.EG.cursors.up.isDown || this.EG.cursors.space.isDown)
+      && this.EG.player.body.touching.down) { // Prevent the player from jumping in mid-air. To jump player needs to rest on a hard surface.
       this.EG.player.setVelocityY(C.playerUpVelocityY);
     }
 
