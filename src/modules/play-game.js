@@ -48,38 +48,14 @@ class PlayGame extends Phaser.Scene {
     // Group of static platforms.
     this.EG.platforms = this.physics.add.staticGroup();
     C.platforms.map((data) => {
-      if (data.left) {
-        this.EG.platforms.add(this.add.tileSprite(  // Left end of the platform.
-          data.left[C.platformsX],
-          data.left[C.platformsY],
-          data.left[C.platformsWidth],
-          data.left[C.platformsHeight],
-          C.platformKey,
-          C.platformsFrameKeyLeft,
-        ));
-      }
-
-      if (data.middle) {
-        this.EG.platforms.add(this.add.tileSprite(  // Middle of the platform.
-          data.middle[C.platformsX],
-          data.middle[C.platformsY],
-          data.middle[C.platformsWidth],
-          data.middle[C.platformsHeight],
-          C.platformKey,
-          C.platformsFrameKeyMiddle,
-        ));
-      }
-
-      if (data.right) {
-        this.EG.platforms.add(this.add.tileSprite(  // Right end of the platform.
-          data.right[C.platformsX],
-          data.right[C.platformsY],
-          data.right[C.platformsWidth],
-          data.right[C.platformsHeight],
-          C.platformKey,
-          C.platformsFrameKeyRight,
-        ));
-      }
+      this.EG.platforms.add(this.add.tileSprite(
+        data[C.platformsX],
+        data[C.platformsY],
+        data[C.platformsWidth],
+        data[C.platformsHeight],
+        C.platformKey,
+        data[C.platformsFrame],
+      ));
     });
     this.physics.add.collider(this.EG.stars, this.EG.platforms);
 
