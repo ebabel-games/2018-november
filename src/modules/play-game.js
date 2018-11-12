@@ -105,10 +105,12 @@ class PlayGame extends Phaser.Scene {
     if (this.EG.firstPlay) {
       this.anims.create({
         key: C.playerAnimations.left.key,
-        frames: this.anims.generateFrameNumbers(C.playerKey, {
-          start: C.playerAnimations.left.start,
-          end: C.playerAnimations.left.end,
-        }),
+        frames: this.anims.generateFrameNames(
+          C.playerKey,
+          {
+            frames: C.playerAnimations.left.frames,
+          }
+        ),
         frameRate: C.playerAnimations.left.frameRate,
         repeat: C.playerAnimations.left.repeat,
       });
@@ -122,10 +124,12 @@ class PlayGame extends Phaser.Scene {
       });
       this.anims.create({
         key: C.playerAnimations.right.key,
-        frames: this.anims.generateFrameNumbers(C.playerKey, {
-          start: C.playerAnimations.right.start,
-          end: C.playerAnimations.right.end,
-        }),
+        frames: this.anims.generateFrameNames(
+          C.playerKey,
+          {
+            frames: C.playerAnimations.right.frames,
+          }
+        ),
         frameRate: C.playerAnimations.right.frameRate,
         repeat: C.playerAnimations.right.repeat,
       });

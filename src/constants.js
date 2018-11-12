@@ -112,8 +112,7 @@ module.exports = {
   playerAnimations: {
     left: {
       key: 'left',
-      start: 0,
-      end: 3,
+      frames: [0, 1, 2, 3],
       frameRate: 10,
       repeat: -1,
     },
@@ -124,8 +123,7 @@ module.exports = {
     },
     right: {
       key: 'right',
-      start: 5,
-      end: 8,
+      frames: [5, 6, 7, 8],
       frameRate: 10,
       repeat: -1,
     },
