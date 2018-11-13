@@ -1,17 +1,20 @@
 # 2018 November game
 
+## 1.3.0
+- In debug mode, stars and platforms can be manually dragged to new positions.
+
 ## 1.2.1
-Fix compatibility issues for supported browsers.
+- Fix compatibility issues for supported browsers.
 
 ## 1.2.0
-Explore beyond the initial visual game screen, like Super Mario who sees more than first screen.
-See [Zenva course](https://academy.zenva.com/lesson/arcade-basics/) for more info.
+- Explore beyond the initial visual game screen, like Super Mario who sees more than first screen.
+- See [Zenva course](https://academy.zenva.com/lesson/arcade-basics/) for more info.
 
 ## 1.1.0
-Touch enabled for mobile devices.
-Code based on Phaser 3 release documentation for [handling touch events](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/touchevents/).
+- Touch enabled for mobile devices.
+- Code based on Phaser 3 release documentation for [handling touch events](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/touchevents/).
 
 ## 1.0.0
-First version of the game, launch for desktop browsers with keyboard input (arrow keys left, right, and up).
-Project started from a [boilerplate](https://github.com/photonstorm/phaser3-project-template).
-See [tutorial walkthrough](http://phaser.io/tutorials/making-your-first-phaser-3-game) and [Phaser 3 book](https://phaser.io/news/2018/07/brand-new-phaser-3-book) for more info.
+- First version of the game, launch for desktop browsers with keyboard input (arrow keys left, right, and up).
+- Project started from a [boilerplate](https://github.com/photonstorm/phaser3-project-template).
+- See [tutorial walkthrough](http://phaser.io/tutorials/making-your-first-phaser-3-game) and [Phaser 3 book](https://phaser.io/news/2018/07/brand-new-phaser-3-book) for more info.

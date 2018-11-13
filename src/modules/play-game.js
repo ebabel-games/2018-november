@@ -38,26 +38,46 @@ class PlayGame extends Phaser.Scene {
     // Stars to collect.
     this.EG.stars = this.physics.add.staticGroup();
     C.stars.map((data) => {
-      this.EG.stars.create(
+      const star = this.EG.stars.create(
         data[0],
         data[1],
         C.starsKey,
       );
-    });    
+
+      if (C.debug) {
+        star.setInteractive();
+        this.input.setDraggable(star);
+      }
+    });
 
     // Group of static platforms.
     this.EG.platforms = this.physics.add.staticGroup();
     C.platforms.map((data) => {
-      this.EG.platforms.add(this.add.tileSprite(
+      const platform = this.add.tileSprite(
         data[C.platformsX],
         data[C.platformsY],
         data[C.platformsWidth],
         data[C.platformsHeight],
         C.platformKey,
         data[C.platformsFrame],
-      ));
+      );
+
+      this.EG.platforms.add(platform);
+
+      if (C.debug) {
+        platform.setInteractive();
+        this.input.setDraggable(platform);
+      }
     });
     this.physics.add.collider(this.EG.stars, this.EG.platforms);
+
+    if (C.debug) {
+      this.input.on('drag', function(pointer, gameObject, dragX, dragY){
+        gameObject.x = dragX;
+        gameObject.y = dragY;
+        console.log(dragX, dragY);
+      });
+    }
 
     // Setup main player sprite.
     const playerX = (this.EG.firstPlay) ? C.playerStartX : this.EG.player.x;  // Default x position of player or previous game x position.
