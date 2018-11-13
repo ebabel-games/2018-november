@@ -1,7 +1,10 @@
 # 2018 November game
 
+## 1.2.1
+Fix compatibility issues for supported browsers.
+
 ## 1.2.0
-Epxlore beyond the initial visual game screen, like Super Mario who sees more than first screen.
+Explore beyond the initial visual game screen, like Super Mario who sees more than first screen.
 See [Zenva course](https://academy.zenva.com/lesson/arcade-basics/) for more info.
 
 ## 1.1.0

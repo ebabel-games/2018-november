@@ -32,3 +32,25 @@ By default, debug mode is off. To switch it on, run in Javascript console of you
 ```
 localStorage['debug'] = true;
 ```
+
+## Acceptance criterias
+For each mini-game made in just 1 month, I want to hit as many as possible of these targets:
+- [x] Player interactions are central to the game.
+- [x] There is a clear outcome to the game: the player either wins or loses.
+- [x] Graphics and animations are unique and created for the game.
+- [ ] Sounds are unique and created for the game. (Open source at a minimum)
+- [x] Layout is responsive.
+- [x] Single page app: It's possible to play the game multiple times without reloading the page.
+- [x] Portrait and landscape modes are both supported.
+- [x] Playable on the most popular (NL) touch device browsers at that time: Chrome69 for Android, Safari12 and 11.4 for iOS.
+- [x] Playable on the most popular (NL) desktop browsers at that time: ~~IE11~~, Edge17, Firefox62, Chrome69, Chrome70, and Safari12. (IE11 not supported)
+- [x] Performance is stable enough with a good frame rate throughout the gaming experience (60 fps).
+- [x] Unit tests, test coverage reporting, and linting are all setup.
+- [ ] Test coverage is higher than 80%.
+- [ ] Travis CI build pipeline passes.
+- [x] Semantic versioning and release tags standards are adhered to.
+- [x] Published on [Github Pages](https://pages.github.com/).
+- [ ] Listed on my [eBabel gaming website](https://ebabel.eu).
+- [ ] Published on [Google Play](https://play.google.com/apps/publish/).
+- [ ] Published on [App Store](https://developer.apple.com/app-store/submissions/).
+- [ ] Published on [Windows game store](https://docs.microsoft.com/en-gb/windows/uwp/publish/).

@@ -1,6 +1,6 @@
 {
   "name": "2018-november",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Game fully developed in just one month, from beginning to end.",
   "main": "src/index.js",
   "scripts": {
