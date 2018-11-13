@@ -47,7 +47,7 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [x] Performance is stable enough with a good frame rate throughout the gaming experience (60 fps).
 - [x] Unit tests, test coverage reporting, and linting are all setup.
 - [ ] Test coverage is higher than 80%.
-- [ ] Travis CI build pipeline passes.
+- [x] Travis CI build pipeline passes.
 - [x] Semantic versioning and release tags standards are adhered to.
 - [x] Published on [Github Pages](https://pages.github.com/).
 - [ ] Listed on my [eBabel gaming website](https://ebabel.eu).
