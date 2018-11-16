@@ -1,5 +1,8 @@
 # 2018 November game
 
+## 1.4.0
+- Add Progressive Web App (PWA) features: offline, cache, updates of new version, installable on mobile homescreens and desktops.
+
 ## 1.3.0
 - In debug mode, stars and platforms can be manually dragged to new positions.
 

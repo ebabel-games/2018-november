@@ -50,7 +50,8 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [x] Travis CI build pipeline passes.
 - [x] Semantic versioning and release tags standards are adhered to.
 - [x] Published on [Github Pages](https://pages.github.com/).
-- [ ] Listed on my [eBabel gaming website](https://ebabel.eu).
-- [ ] Published on [Google Play](https://play.google.com/apps/publish/).
-- [ ] Published on [App Store](https://developer.apple.com/app-store/submissions/).
-- [ ] Published on [Windows game store](https://docs.microsoft.com/en-gb/windows/uwp/publish/).
+- [x] Listed on my [eBabel gaming website](https://ebabel.eu).
+- [ ] Works offline as a Progressive Web App (PWA).
+- [ ] Can be added to homescreen on smartphone.
+- [ ] Can be updated if a new version is made.
+- [ ] Can be installed as a Desktop PWA.
