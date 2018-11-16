@@ -7,6 +7,7 @@
  */
 
 import * as C from './constants';
+import pwa from './utils/pwa';
 import resizeGame from './utils/resize-game';
 import debounce from './utils/debounce';
 import BootGame from './modules/boot-game';
@@ -14,6 +15,9 @@ import PlayGame from './modules/play-game';
 
 // The whole game is enclosed in an anonymous function that runs once all code is loaded.
 window.addEventListener('load', () => {
+  // Progressive Web App (PWA) configuration.
+  pwa();
+
   // Phaser configuration.
   const config = {
     type: Phaser.AUTO,
