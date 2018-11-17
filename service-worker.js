@@ -1,4 +1,6 @@
-const cacheName = 'nov2018-cache';
+'use strict';
+
+const cacheName = 'nov2018-cache-v1';
 const cacheUrls = [
   '/index-offline.html',
   '/index.html',
@@ -13,16 +15,17 @@ const cacheUrls = [
   '/assets/star.svg',
   '/assets/bomb.svg',
   '/assets/hero.png',
-  '/assets/kenney-sounds/coin1.mp3',
   '/assets/kenney-sounds/coin1.ogg',
-  '/assets/kenney-sounds/explosion1.mp3',
   '/assets/kenney-sounds/explosion1.ogg',
-  '/assets/kenney-sounds/gameover3.mp3',
   '/assets/kenney-sounds/gameover3.ogg',
-  '/assets/kenney-sounds/jingles_NES03.mp3',
   '/assets/kenney-sounds/jingles_NES03.ogg',
+  '/assets/kenney-sounds/coin1.mp3',
+  '/assets/kenney-sounds/explosion1.mp3',
+  '/assets/kenney-sounds/gameover3.mp3',
+  '/assets/kenney-sounds/jingles_NES03.mp3',
 ];
 
+// Installation step is first. May or may not succeed.
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
@@ -31,6 +34,12 @@ self.addEventListener('install', (e) => {
   );
 });
 
+// Activation step of code that has been installed.
+self.addEventListener('activate', (e) => {
+  const current = e;
+});
+
+// Intercept HTTP requests and handle them with a response from the cache, if any.
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     fetch(e.request).catch(() => {
@@ -40,6 +49,7 @@ self.addEventListener('fetch', (e) => {
             return response;
           }
 
+          // Fallback to the offline page if cache fails.
           if (e.request.headers.get('accept').includes('text/html')) {
             return caches.match('/index-offline.html');
           }
