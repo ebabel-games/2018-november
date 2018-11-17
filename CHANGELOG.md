@@ -1,5 +1,8 @@
 # 2018 November game
 
+## 1.5.0
+- Host game on Firebase instead of Github Pages.
+
 ## 1.4.0
 - Add Progressive Web App (PWA) features: offline, cache, updates of new version, installable on mobile homescreens, and on desktops.
 - See O'Reilly book [Building Progressive Web Apps](https://www.oreilly.com/library/view/building-progressive-web/9781491961643/) by [Tal Ater](https://twitter.com/talater) for more info.

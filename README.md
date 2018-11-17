@@ -49,7 +49,7 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [ ] Test coverage is higher than 80%.
 - [x] Travis CI build pipeline passes.
 - [x] Semantic versioning and release tags standards are adhered to.
-- [x] Published on [Github Pages](https://pages.github.com/).
+- [x] Published on [Firebase](https://firebase.google.com) to support HTTPS.
 - [x] Listed on my [eBabel gaming website](https://ebabel.eu).
 - [x] Works offline as a Progressive Web App (PWA) with CacheStorage.
 - [x] Can be updated if a new version is made.
