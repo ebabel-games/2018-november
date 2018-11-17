@@ -1,7 +1,8 @@
 # 2018 November game
 
 ## 1.4.0
-- Add Progressive Web App (PWA) features: offline, cache, updates of new version, installable on mobile homescreens and desktops.
+- Add Progressive Web App (PWA) features: offline, cache, updates of new version, installable on mobile homescreens, and on desktops.
+- See O'Reilly book [Building Progressive Web Apps](https://www.oreilly.com/library/view/building-progressive-web/9781491961643/) by [Tal Ater](https://twitter.com/talater) for more info.
 
 ## 1.3.0
 - In debug mode, stars and platforms can be manually dragged to new positions.
