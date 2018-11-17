@@ -18,7 +18,7 @@
     }
 
     body > canvas {
-      display: block;
+      display: none;
       margin: 0;
       position: absolute;
       top: 50%;
@@ -74,6 +74,10 @@
       border-color: #999;
     }
 
+    #logo {
+      margin: 0 auto 1em;
+    }
+
     @media (max-width: 768px) {
       #loading {
         padding: 1em;
@@ -112,7 +116,7 @@
       height: auto;
     }
 
-    marquee {
+    #noscript p {
       margin: 0 0 2.5em;
     }
   </style>
@@ -120,18 +124,15 @@
 <body>
   <div id="loading">
     <h1>Nov 2018</h1>
-
-    <p><button id="play-button" disabled="disabled">Play</button></p>
-  
-    <p><img src="assets/logo.svg" width="330" height="330" alt="Game logo" id="logo"></p>
-
+    <p><button id="play-button" disabled="disabled">Play</button></p>  
+    <img src="assets/logo.svg" width="330" height="330" alt="Game logo" id="logo">
     <p id="loading-animation">Game loading, please wait...</p>
   </div>
 
   <noscript>
     <div id="noscript">
-      <marquee>Enable Javascript to play this game.</marquee>
-      <p><img src="assets/logo.svg" width="330" height="330" alt="Game logo" id="logo"></p>
+      <p>Enable Javascript to play this game.</p>
+      <img src="assets/logo.svg" width="330" height="330" alt="Game logo" id="logo">
     </div>
   </noscript>
 
