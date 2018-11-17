@@ -3,8 +3,8 @@
 const pwa = () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
-      .then((registration) => {
-        console.info('Game service worker is registered.', registration.active.scriptURL);  /* eslint no-console: 0 */
+      .then(() => { // Argument is registration.
+        console.info('Game service worker is registered.');  /* eslint no-console: 0 */
       })
       .catch((error) => {
         console.error(`Game service worker failed to register. ${error.message}`);  /* eslint no-console: 0 */
