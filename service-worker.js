@@ -42,7 +42,18 @@ self.addEventListener('install', (e) => {
 // "activating" state can also be extended by calling "event.waitUntil()" and
 // passing it a promise.
 self.addEventListener('activate', (e) => {
-  const current = e;
+  e.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((_cacheName) => {
+          // Delete old caches that are no longer needed.
+          if (_cacheName !== cacheName && cacheName.startsWith('nov2018-cache')) {
+            return caches.delete(_cacheName);
+          } 
+        })
+      );
+    })
+  );
 });
 
 // Once a service worker is activated, it is ready to take control of the page
@@ -64,11 +75,4 @@ self.addEventListener('fetch', (e) => {
         });
     })
   );
-});
-
-// Service workers that failed during registration, or installation, or were
-// replaced by newer versions, are placed in the "redudant" state.
-// Service workers in this state no longer have any effect on the game.
-self.addEventListener('redundant', (e) => {
-  const current = e;
 });
