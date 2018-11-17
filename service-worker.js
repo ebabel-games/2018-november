@@ -1,5 +1,6 @@
 const cacheName = 'nov2018-cache';
 const cacheUrls = [
+  '/index-offline.html',
   '/index.html',
   '/favicon.ico',
   '/robots.txt',
@@ -39,7 +40,7 @@ self.addEventListener('fetch', (e) => {
           }
 
           if (e.request.headers.get('accept').includes('text/html')) {
-            return caches.match('/index.html');
+            return caches.match('/index-offline.html');
           }
         });
     })
