@@ -62,4 +62,4 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [x] Works offline as a Progressive Web App (PWA) with CacheStorage.
 - [x] Can be updated if a new version is made.
 - [ ] Can be installed as a [Desktop PWA](https://developers.google.com/web/progressive-web-apps/desktop).
-- [ ] Can be added to homescreen on smartphone.
+- [ ] Can be added to [homescreen on smartphone](https://developers.google.com/web/fundamentals/app-install-banners/).
