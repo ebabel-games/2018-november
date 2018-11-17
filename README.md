@@ -51,7 +51,7 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [x] Semantic versioning and release tags standards are adhered to.
 - [x] Published on [Github Pages](https://pages.github.com/).
 - [x] Listed on my [eBabel gaming website](https://ebabel.eu).
-- [ ] Works offline as a Progressive Web App (PWA).
+- [x] Works offline as a Progressive Web App (PWA) with CacheStorage.
 - [ ] Can be added to homescreen on smartphone.
 - [ ] Can be updated if a new version is made.
 - [ ] Can be installed as a Desktop PWA.
