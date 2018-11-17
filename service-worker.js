@@ -2,6 +2,7 @@ const cacheName = 'nov2018-cache';
 const cacheUrls = [
   '/index-offline.html',
   '/index.html',
+  '/',
   '/favicon.ico',
   '/robots.txt',
   '/assets/logo.svg',
@@ -33,7 +34,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     fetch(e.request).catch(() => {
-      return caches.match(e.request)
+      return caches.match(e.request, { ignoreSearch: true })
         .then((response) => {
           if (response) {
             return response;
