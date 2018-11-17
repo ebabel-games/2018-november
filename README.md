@@ -21,6 +21,14 @@ Run next commands in your terminal:
 
 Browse to http://localhost:8080 to play the game.
 
+## Deploy to Firebase
+```
+npm install -g firebase-tools
+firebase login
+firebase use --add [name of your Firebase app]
+firebase deploy --only hosting
+```
+
 ## Test localhost on a touch device
 - [Check your local IP](https://www.whatismyip.com/) on your network (it should start with 192.168.).
 - Put your touch device on the same network as your development machine (same Wifi for eample).
