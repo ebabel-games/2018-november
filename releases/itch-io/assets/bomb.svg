@@ -1,0 +1,35 @@
+<svg width="25" height="25" version="1.1" viewBox="0 0 6.6146 6.6146" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <radialGradient id="b" cx="88.267" cy="62.482" r="33.338" gradientTransform="matrix(.010039 .031772 -.023438 .0074053 198.26 53.805)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="a">
+   <stop stop-color="#808080" offset="0"/>
+   <stop stop-color="#1a1a1a" offset="1"/>
+  </linearGradient>
+  <linearGradient id="d" x1="91.065" x2="102.5" y1="38.514" y2="38.467" gradientTransform="matrix(.045679 0 0 .045679 193.7 54.77)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <filter id="f" x="-.55277" y="-.45822" width="2.1055" height="1.9164" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="1.4285721"/>
+  </filter>
+  <filter id="e" x="-1.1326" y="-.86108" width="3.2652" height="2.7222" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="1.3872622"/>
+  </filter>
+  <linearGradient id="c" x1="104.91" x2="105.32" y1="32.417" y2="14.409" gradientTransform="matrix(.045679 0 0 .045679 193.7 54.77)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#ff3a16" offset="0"/>
+   <stop stop-color="#ffdc88" offset="1"/>
+  </linearGradient>
+  <filter id="g" x="-.5796" y="-.5796" width="2.1592" height="2.1592" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="3.1175522"/>
+  </filter>
+ </defs>
+ <g transform="translate(-195.18 -54.459)">
+  <g>
+   <circle cx="198.48" cy="57.786" r="1.5107" fill="url(#b)"/>
+   <path d="m197.95 56.263c0.34808-0.19854 0.73481-0.19697 1.0536 0l0.01 0.29006c-0.37291 0.17466-0.72324 0.16064-1.0536 0z" fill="url(#d)"/>
+   <ellipse transform="matrix(.020201 .040969 -.031912 .032684 193.48 55.235)" cx="96.119" cy="-70.242" rx="2.4081" ry="3.8987" fill="#999" filter="url(#f)"/>
+   <ellipse transform="matrix(.039756 .022494 -.022494 .039756 193.48 55.235)" cx="97.534" cy="-4.5207" rx="1.1906" ry="2.1167" fill="#999" filter="url(#e)"/>
+   <ellipse cx="198.48" cy="56.258" rx=".5268" ry=".14291" fill="#333"/>
+  </g>
+  <path d="m198.49 56.251s-0.28127-0.22401-0.21755-0.48344c0.0789-0.3211 0.50214-0.16147 0.48344-0.48948" fill="none" stroke="url(#c)" stroke-linecap="round" stroke-width=".084601"/>
+  <path d="m199.14 55.824-0.38631-0.54616-0.67148 0.16193 0.37733-0.2927-0.34075-0.48988 0.54609 0.45045 0.27382-0.64819-0.0427 0.5315 0.47344-0.01579-0.39145 0.15738z" fill="#ffbb16" stroke-width=".012086"/>
+  <circle transform="matrix(.045679 0 0 .045679 193.63 54.72)" cx="111.82" cy="9.287" r="6.4546" fill="#ff3a16" filter="url(#g)" stroke-width=".26458"/>
+ </g>
+</svg>

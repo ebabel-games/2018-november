@@ -10,7 +10,8 @@
       "assets/screenshots/**",
       "coverage/**",
       "src/**",
-      "test/**"
+      "test/**",
+      "releases/**"
     ]
   }
 }
