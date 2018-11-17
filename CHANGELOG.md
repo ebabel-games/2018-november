@@ -1,5 +1,9 @@
 # 2018 November game
 
+## 1.6.0
+- Setup Desktop Progressive Web App for the game.
+- See https://developers.google.com/web/progressive-web-apps/desktop
+
 ## 1.5.0
 - Host game on Firebase instead of Github Pages.
 

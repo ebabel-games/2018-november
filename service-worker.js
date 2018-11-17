@@ -1,7 +1,7 @@
 // Update the cache name version to promote a new set of files to all clients.
 // When a client is closed, next time it opens, the new files will activate
 // if they got installed the previous time the game was installed.
-const cacheName = 'nov2018-cache-v1.4.0';
+const cacheName = 'nov2018-cache-1.6.0';
 const mutableRequests = [
   '/index.html',
   '/',
