@@ -67,3 +67,6 @@ v8-compile-cache-0
 # Game build
 build/
 /npm-debug.log
+
+# Firebase cache
+.firebase/
