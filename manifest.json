@@ -2,6 +2,9 @@
   "short_name": "nov2018",
   "name": "Nov 2018",
   "description": "Collect all the stars as fast as possible! More and more deadly bombs will appear.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
   "icons": [
     {
       "src": "/assets/icons-192.png",
@@ -14,10 +17,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "theme_color": "#168db5",
   "background_color": "#168db5",
-  "display": "fullscreen",
-  "orientation": "landscape",
-  "scope": "/",
-  "theme_color": "#168db5"
+  "orientation": "landscape"
 }
