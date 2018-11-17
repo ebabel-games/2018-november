@@ -42,12 +42,12 @@ module.exports = {
   worldBoundsHeight: 1200,
 
   skyKey: 'sky',
-  skyAsset: 'assets/sky.svg',
+  skyAsset: '/assets/sky.svg',
   skyPositionX: 400,
   skyPositionY: 300,
 
   starsKey: 'star',
-  starsAsset: 'assets/star.svg',
+  starsAsset: '/assets/star.svg',
   starsRepeat: 11,
   starsPositionX: 14,
   starsPositionY: 60,
@@ -98,7 +98,7 @@ module.exports = {
   ],
 
   platformKey: 'platform',
-  platformAsset: 'assets/platform.svg',
+  platformAsset: '/assets/platform.svg',
   platformFrameWidth: 32,
   platformFrameHeight: 32,
   platformIsStatic: true,
@@ -180,7 +180,7 @@ module.exports = {
   platformsFrameKeyRight: 2,
 
   playerKey: 'hero',
-  playerAsset: 'assets/hero.png',
+  playerAsset: '/assets/hero.png',
   playerFrameWidth: 32,
   playerFrameHeight: 48,
   playerStartX: 120,
@@ -241,7 +241,7 @@ module.exports = {
   bombMiddleBorder: 400,
   bombRightEdge: 800,
   bombKey: 'bomb',
-  bombAsset: 'assets/bomb.svg',
+  bombAsset: '/assets/bomb.svg',
   bombStartPositionY: 16,
   bombBounce: 1,
   bombCollideWorldBounds: true,
@@ -253,11 +253,11 @@ module.exports = {
   bombSpawnInterval: (debug) ? 150000 : 15000,
 
   audioCollectStarKey: 'collect-star',
-  audioCollectStarAssets: ['assets/kenney-sounds/coin1.ogg', 'assets/kenney-sounds/coin1.mp3'],
+  audioCollectStarAssets: ['/assets/kenney-sounds/coin1.ogg', '/assets/kenney-sounds/coin1.mp3'],
   audioExplosionKey: 'explosion',
-  audioExplosionAssets: ['assets/kenney-sounds/explosion1.ogg', 'assets/kenney-sounds/explosion1.mp3'],
+  audioExplosionAssets: ['/assets/kenney-sounds/explosion1.ogg', '/assets/kenney-sounds/explosion1.mp3'],
   audioGameOverKey: 'gameover',
-  audioGameOverAssets: ['assets/kenney-sounds/gameover3.ogg', 'assets/kenney-sounds/gameover3.mp3'],
+  audioGameOverAssets: ['/assets/kenney-sounds/gameover3.ogg', '/assets/kenney-sounds/gameover3.mp3'],
   audioWinKey: 'win',
-  audioWinAssets: ['assets/kenney-sounds/jingles_NES03.ogg', 'assets/kenney-sounds/jingles_NES03.mp3'],
+  audioWinAssets: ['/assets/kenney-sounds/jingles_NES03.ogg', '/assets/kenney-sounds/jingles_NES03.mp3'],
 };
