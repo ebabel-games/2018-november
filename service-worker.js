@@ -1,6 +1,4 @@
-'use strict';
-
-const cacheName = 'nov2018-cache-v1';
+const cacheName = 'nov2018-cache-v1.4.0';
 const cacheUrls = [
   '/index-offline.html',
   '/index.html',
@@ -25,7 +23,9 @@ const cacheUrls = [
   '/assets/kenney-sounds/jingles_NES03.mp3',
 ];
 
-// Installation step is first. May or may not succeed.
+// Once a service worker has successfully installed, it enters the "installed" state.
+// It will then immediately move on to the "activating" state, unless another active
+// service worker is currently controlling this game, in which case it will remain "waiting".
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
@@ -34,12 +34,17 @@ self.addEventListener('install', (e) => {
   );
 });
 
-// Activation step of code that has been installed.
+// Before a service worker becomes active and takes control of the game,
+// the "activate" event is triggered. Similar to the installing state, the
+// "activating" state can also be extended by calling "event.waitUntil()" and
+// passing it a promise.
 self.addEventListener('activate', (e) => {
   const current = e;
 });
 
-// Intercept HTTP requests and handle them with a response from the cache, if any.
+// Once a service worker is activated, it is ready to take control of the page
+// and listen to functional events such as "fetch".
+// This intercepts HTTP requests and handle them with a response from the cache, if any.
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     fetch(e.request).catch(() => {
@@ -56,4 +61,11 @@ self.addEventListener('fetch', (e) => {
         });
     })
   );
+});
+
+// Service workers that failed during registration, or installation, or were
+// replaced by newer versions, are placed in the "redudant" state.
+// Service workers in this state no longer have any effect on the game.
+self.addEventListener('redundant', (e) => {
+  const current = e;
 });
