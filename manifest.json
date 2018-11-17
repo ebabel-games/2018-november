@@ -1,6 +1,7 @@
 {
   "short_name": "nov2018",
   "name": "Nov 2018",
+  "description": "Collect all the stars as fast as possible! More and more deadly bombs will appear.",
   "icons": [
     {
       "src": "/assets/icons-192.png",

@@ -6,6 +6,7 @@ const mutableRequests = [
   '/index.html',
   '/',
   '/build/game.min.js',
+  '/manifest.json',
 ];
 
 // Long term cache for immutableRequests isn't going to be updated,

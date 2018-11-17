@@ -1,7 +1,7 @@
 # 2018 November
 [![Build Status](https://travis-ci.org/ebabel-games/2018-november.svg?branch=master)](https://travis-ci.org/ebabel-games/2018-november) [![dependencies Status](https://david-dm.org/ebabel-games/2018-november.svg)](https://david-dm.org/ebabel-games/2018-november.svg)
 
-Game fully developed in just one month, from beginning to end.
+Collect all the stars as fast as possible! More and more deadly bombs will appear.
 
 ![Screenshot of gameplay](assets/screenshots/2018-11-12-2325.png)
 
