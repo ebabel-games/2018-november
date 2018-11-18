@@ -1,5 +1,8 @@
 # 2018 November game
 
+## 1.7.0
+- Publish game on [itch.io](https://ebabel.itch.io/nov-2018)
+
 ## 1.6.0
 - Setup Desktop Progressive Web App for the game.
 - See https://developers.google.com/web/progressive-web-apps/desktop

@@ -1,6 +1,6 @@
 {
   "name": "2018-november",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Collect all the stars as fast as possible! More and more deadly bombs will appear.",
   "main": "src/index.js",
   "scripts": {
