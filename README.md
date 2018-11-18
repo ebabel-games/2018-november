@@ -50,14 +50,19 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [x] Layout is responsive.
 - [x] Single page app: It's possible to play the game multiple times without reloading the page.
 - [x] Portrait and landscape modes are both supported.
-- [x] Playable on the most popular (NL) touch device browsers at that time: Chrome69 for Android, Safari12 and 11.4 for iOS.
+- [ ] Playable on the most popular (NL) touch device browsers at that time:
+  - [ ] Edge 17,
+  - [ ] Firefox 62,
+  - [ ] Chrome 69,
+  - [ ] Chrome 70,
+  - [ ] and Safari 12.
 - [ ] Playable on the most popular (NL) desktop browsers at that time:
-  - [ ] ~~IE11~~ (IE11 is not supported),
-  - [x] Edge17,
-  - [x] Firefox62,
-  - [x] Chrome69,
-  - [x] Chrome70,
-  - [x] and Safari12.
+  - [ ] ~~IE 11~~ (not supported despite popularity),
+  - [x] Edge 17,
+  - [x] Firefox 62,
+  - [x] Chrome 69,
+  - [x] Chrome 70,
+  - [x] and Safari 12.
 - [x] Performance is stable enough with a good frame rate throughout the gaming experience (60 fps).
 - [x] Unit tests, test coverage reporting, and linting are all setup.
 - [ ] Test coverage is higher than 80%.
@@ -68,16 +73,15 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
 - [x] Works offline as a Progressive Web App (PWA) with CacheStorage.
 - [x] Can be updated if a new version is made.
 - [ ] Can be installed as a [Desktop Progressive Web App](https://developers.google.com/web/progressive-web-apps/desktop) with:
-  - [ ] ~~IE11~~ (IE11 is not supported),
-  - [ ] Edge17,
-  - [ ] Firefox62,
-  - [x] Chrome69,
-  - [x] Chrome70,
-  - [ ] and Safari12.
-- [ ] Can be added to [homescreen on smartphone](https://developers.google.com/web/fundamentals/app-install-banners/) with:
-  - [ ] ~~IE11~~ (IE11 is not supported),
-  - [ ] Edge17,
-  - [ ] Firefox62,
-  - [ ] Chrome69,
-  - [ ] Chrome70,
-  - [ ] and Safari12.
+  - [ ] ~~IE 11~~ (not supported despite popularity),
+  - [ ] Edge 17,
+  - [ ] Firefox 62,
+  - [x] Chrome 69 on [x] Windows 10, [ ] MacOS 10.4, [ ] iOS 12, and [ ] Android 9.0,
+  - [x] Chrome 70 on [x] Windows 10, [ ] MacOS 10.4, [ ] iOS 12, and [ ] Android 9.0,
+  - [ ] and Safari 12.
+- [ ] Can be [added to homescreen](https://developers.google.com/web/fundamentals/app-install-banners/) (A2HS) on smartphone with:
+  - [ ] Edge 17,
+  - [ ] Firefox 62,
+  - [ ] Chrome 69,
+  - [ ] Chrome 70,
+  - [ ] and Safari 12.
