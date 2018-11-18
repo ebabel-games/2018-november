@@ -49,6 +49,9 @@ class BootGame extends Phaser.Scene {
       // Hide the loading screen when the player clicks on the enabled Play button.
       document.getElementById('loading').style.display = 'none';
 
+      // Hide the install banner.
+      document.getElementById('install-banner').style.display = 'none';
+
       // Display the canvas.
       document.querySelector('body > canvas').style.display = 'block';
 
