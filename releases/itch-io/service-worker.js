@@ -1,37 +1,37 @@
 // Update the cache name version to promote a new set of files to all clients.
 // When a client is closed, next time it opens, the new files will activate
 // if they got installed the previous time the game was installed.
-const cacheName = 'nov2018-cache-v1.4.0';
+const cacheName = 'nov2018-cache-1.7.0';
 const mutableRequests = [
-  '/index.html',
+  'index.html',
   '/',
-  '/build/game.min.js',
-  '/manifest.json',
+  'build/game.min.js',
+  'manifest.json',
 ];
 
 // Long term cache for immutableRequests isn't going to be updated,
 // so to save resources and bandwidth, it is kept separate.
 const immutableRequests = [
-  '/index-offline.html',
-  '/favicon.ico',
-  '/robots.txt',
+  'index-offline.html',
+  'favicon.ico',
+  'robots.txt',
   'https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser.min.js',
-  '/assets/logo.svg',
-  '/assets/sky.svg',
-  '/assets/platform.svg',
-  '/assets/star.svg',
-  '/assets/bomb.svg',
-  '/assets/hero.png',
-  '/assets/icons-192.png',
-  '/assets/icons-512.png',
-  '/assets/kenney-sounds/coin1.ogg',
-  '/assets/kenney-sounds/explosion1.ogg',
-  '/assets/kenney-sounds/gameover3.ogg',
-  '/assets/kenney-sounds/jingles_NES03.ogg',
-  '/assets/kenney-sounds/coin1.mp3',
-  '/assets/kenney-sounds/explosion1.mp3',
-  '/assets/kenney-sounds/gameover3.mp3',
-  '/assets/kenney-sounds/jingles_NES03.mp3',
+  'assets/logo.svg',
+  'assets/sky.svg',
+  'assets/platform.svg',
+  'assets/star.svg',
+  'assets/bomb.svg',
+  'assets/hero.png',
+  'assets/icons-192.png',
+  'assets/icons-512.png',
+  'assets/kenney-sounds/coin1.ogg',
+  'assets/kenney-sounds/explosion1.ogg',
+  'assets/kenney-sounds/gameover3.ogg',
+  'assets/kenney-sounds/jingles_NES03.ogg',
+  'assets/kenney-sounds/coin1.mp3',
+  'assets/kenney-sounds/explosion1.mp3',
+  'assets/kenney-sounds/gameover3.mp3',
+  'assets/kenney-sounds/jingles_NES03.mp3',
 ];
 
 // Once a service worker has successfully installed, it enters the "installed" state.
@@ -98,7 +98,7 @@ self.addEventListener('fetch', (e) => {
 
           // Fallback to the offline page if cache fails.
           if (e.request.headers.get('accept').includes('text/html')) {
-            return caches.match('/index-offline.html');
+            return caches.match('index-offline.html');
           }
         });
     })
