@@ -85,4 +85,4 @@ For each mini-game made in just 1 month, I want to hit as many as possible of th
   - [ ] Chrome 69,
   - [ ] Chrome 70,
   - [ ] and Safari 12.
-- [x] Published on [itch.io](https://ebabel.itch.io)
+- [x] Published on [itch.io](https://ebabel.itch.io/nov-2018                                                                                                                                                                                                                        )
